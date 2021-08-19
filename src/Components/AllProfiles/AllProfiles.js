@@ -1,0 +1,129 @@
+import React, { useEffect, useState } from "react";
+import MaterialTable from "material-table";
+import tableIcons from "./MaterialTableIcons";
+import { useHistory } from "react-router-dom";
+import browserRoutes from "../../Routes/browserRoutes";
+import serverRoutes from "../../Routes/serverRoutes";
+import axios from "axios";
+// import { data } from "./data";
+
+const AllProfiles = () => {
+  const history = useHistory();
+
+  const [data, setData] = useState([]);
+
+  const createNewProfile = () => {
+    history.push(browserRoutes.CREATE_PROFILES);
+  };
+
+  const columns = [
+    { title: "Title", field: "title" },
+    { title: "Firstname", field: "firstname" },
+    { title: "Lastname", field: "lastname" },
+    { title: "Marriedname", field: "marriedName" },
+    { title: "Mothername", field: "motherName" },
+    { title: "Fathername", field: "fatherName" },
+  ];
+
+  useEffect(() => {
+    axios
+      .get(serverRoutes.ALUMNI)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
+
+  const logout = (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    history.push(browserRoutes.AUTH);
+  };
+
+  return (
+    <>
+      <div className="container">
+        <nav className="navbar">
+          {/* <img style={{ width: "50%" }} src="images/logo.png" alt="..." /> */}
+          <img width="200px" src="images/fake-logo.png" alt="..." />
+          <div className="d-flex">
+            {/* <a className="nav-link" href="#!">
+              Your Profile
+            </a> */}
+            <button
+              // className="btn selectwalletbutton my-2 my-sm-0"
+              className="nav-link"
+            >
+              Admin Center
+            </button>
+            <button
+              className="btn selectwalletbutton ml-2"
+              type="button"
+              onClick={logout}
+            >
+              Log out
+            </button>
+          </div>
+        </nav>
+        <div className="container">
+          <div className="row mt-2">
+            <div className="col-md-12">
+              <MaterialTable
+                icons={tableIcons}
+                columns={columns}
+                data={data}
+                title="All Profiles"
+                actions={[
+                  {
+                    icon: "explore",
+                    tooltip: "Explore Alumni",
+                    onClick: (event, rowData) => {
+                      history.push(
+                        browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id
+                      );
+                    },
+                  },
+                ]}
+                options={{
+                  actionsColumnIndex: -1,
+                }}
+              />
+            </div>
+          </div>
+          <div className="row mt-2">
+            <div className="col-lg-6">
+              <div>
+                <button
+                  className="btn selectwalletbutton my-2 my-sm-0"
+                  onClick={createNewProfile}
+                >
+                  Create New Profile
+                </button>
+              </div>
+            </div>
+            <div className="col-lg-6 d-flex myright">
+              <div>
+                <button
+                  className="btn selectwalletbutton "
+                  onClick={() => history.goBack()}
+                >
+                  Previous Page
+                </button>
+              </div>
+              <div>
+                <button
+                  className="btn selectwalletbutton ml-5"
+                  onClick={() => history.goForward()}
+                >
+                  Next Page
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default AllProfiles;

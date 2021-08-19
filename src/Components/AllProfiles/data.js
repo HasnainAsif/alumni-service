@@ -1,0 +1,32 @@
+export const data = [
+  {
+    id: 1,
+    title: "Its Title 1",
+    firstname: "Mehmet 1",
+    lastname: "Baran 1",
+    marriedName: "Married 1",
+    motherName: "mother 1",
+    fatherName: "father 1",
+    spouseName: "Spouse 1",
+  },
+  {
+    id: 2,
+    title: "Its Title 2",
+    firstname: "Mehmet 2",
+    lastname: "Baran 2",
+    marriedName: "Married 2",
+    motherName: "mother 2",
+    fatherName: "father 2",
+    spouseName: "Spouse 2",
+  },
+  {
+    id: 3,
+    title: "Its Title 3",
+    firstname: "Mehmet 3",
+    lastname: "Baran 3",
+    marriedName: "Married 3",
+    motherName: "mother 3",
+    fatherName: "father 3",
+    spouseName: "Spouse 3",
+  },
+];

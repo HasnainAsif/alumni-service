@@ -1,0 +1,279 @@
+body {
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #f9f9fa;
+  background-repeat: no-repeat;
+}
+
+.card0 {
+  box-shadow: 0px 4px 8px 0px #757575;
+  border-radius: 0px;
+}
+
+.card2 {
+  margin: 0px 40px;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 35px;
+}
+.border-line {
+  border-right: 1px solid #eeeeee;
+}
+
+.facebook {
+  background-color: #3b5998;
+  color: #fff;
+  font-size: 18px;
+  padding-top: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.twitter {
+  background-color: #1da1f2;
+  color: #fff;
+  font-size: 18px;
+  padding-top: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.linkedin {
+  background-color: #2867b2;
+  color: #fff;
+  font-size: 18px;
+  padding-top: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.line {
+  height: 1px;
+  width: 45%;
+  background-color: #e0e0e0;
+  margin-top: 10px;
+}
+
+.or {
+  width: 10%;
+  font-weight: bold;
+}
+
+.text-sm {
+  font-size: 14px !important;
+}
+
+::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+  font-weight: 300;
+}
+
+:-ms-input-placeholder {
+  color: #bdbdbd;
+  font-weight: 300;
+}
+
+::-ms-input-placeholder {
+  color: #bdbdbd;
+  font-weight: 300;
+}
+
+input,
+textarea {
+  padding: 10px 12px 10px 12px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #2c3e50;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+input:focus,
+textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid #304ffe;
+  outline-width: 0;
+}
+
+button:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline-width: 0;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background-color: #1a237e;
+  width: 150px;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.btn-blue:hover {
+  background-color: blue;
+  cursor: pointer;
+  color: #fff;
+}
+
+.bg-blue {
+  color: #fff;
+  background-color: #1a237e;
+}
+
+@media screen and (max-width: 991px) {
+  .logo {
+    margin-left: 0px;
+  }
+
+  .image {
+    width: 300px;
+    height: 220px;
+  }
+
+  .border-line {
+    border-right: none;
+  }
+
+  .card2 {
+    border-top: 1px solid #eeeeee !important;
+    margin: 0px 15px;
+  }
+}
+.header {
+  /*padding-top: 20px;*/
+  transition: 0.5s;
+}
+.workup-navbar li {
+  display: flex;
+}
+.workup-navbar li a {
+  color: #ffffff !important;
+  margin: 0 10px;
+}
+.navbar-expand-lg {
+  background-color: #393c6d;
+}
+.banner-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.heading {
+  color: #000000;
+  font-family: openSans-Extrabold;
+  font-size: 60px;
+}
+.pagehead {
+  font-size: 36px;
+  font-family: openSans-Extrabold;
+  color: #383865;
+}
+.mainp {
+  color: #000000;
+  font-family: openSans-Extrabold;
+  font-size: 30px;
+}
+.paragraph {
+  color: #000000;
+  font-family: openSans;
+  font-size: 16px;
+}
+.btn-donate {
+  background-color: #393c6d;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 20 5px 20px;
+  font-size: 16px;
+}
+.btn-project {
+  background-color: #ff9202;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 20 5px 20px;
+  font-size: 16px;
+}
+.imagewidth {
+  width: inherit;
+}
+.projectdetail {
+  transition: 0.1s;
+}
+.projectdetail:hover {
+  background-color: #ff9202;
+}
+.freshproject {
+  background-color: #f7f9fe;
+}
+.btn-outline-success {
+  background-color: #ff9202;
+  border: none;
+  color: white;
+}
+.nav-link {
+  color: #000000;
+}
+.selectwalletbutton {
+  background-color: #000;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #fff;
+}
+.labels {
+  color: #fff;
+}
+.selectwalletbutton:hover {
+  color: #fff;
+}
+.btn-blue:hover {
+  color: #fff;
+}
+.myright {
+  justify-content: flex-end;
+}
+
+.profile-detail {
+  color: #fff;
+}
+.profile-detail li {
+  list-style: none;
+  border-bottom: 1px solid #efefef;
+}
+.profile-detail li span {
+  padding: 10px 0;
+}
+.profile-detail li span:first-child {
+  width: 38%;
+  /* display: inline-flex; */
+}
+.profile-detail li span:nth-child(2) {
+  width: 60%;
+  font-weight: 600;
+  display: inline-flex;
+}
