@@ -23,8 +23,8 @@ const Register = () => {
     axios
       .post(serverRoutes.USERS, formData)
       .then((res) => {
-        localStorage.setItem("token", JSON.stringify(res.data.token));
-        localStorage.setItem("user", JSON.stringify(res.data.user));
+        localStorage.setItem("token", JSON.stringify(res.data?.token));
+        localStorage.setItem("user", JSON.stringify(res.data?.user));
         toast.success("Registered Successfully");
         setFormData({ email: "", password: "" });
       })

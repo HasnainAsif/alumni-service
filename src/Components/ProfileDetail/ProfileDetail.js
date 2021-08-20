@@ -59,7 +59,7 @@ const ProfileDetail = ({}) => {
   const toEditProfile = (e) => {
     e.preventDefault();
     let ROUTE = browserRoutes.EDIT_PROFILE;
-    if (JSON.parse(localStorage.getItem("user")).admin) {
+    if (JSON.parse(localStorage.getItem("user"))?.admin) {
       ROUTE += "?id=" + window.location?.search?.substring(4);
     }
     history.push(ROUTE);
@@ -143,8 +143,8 @@ const ProfileDetail = ({}) => {
                     Image Name
                   </span> */}
                   <div className="mt-5 text-center">
-                    {!JSON.parse(localStorage.getItem("user")).admin &&
-                    !JSON.parse(localStorage.getItem("user")).alumniId ? (
+                    {!JSON.parse(localStorage.getItem("user"))?.admin &&
+                    !JSON.parse(localStorage.getItem("user"))?.alumniId ? (
                       <button
                         className="btn btn-primary profile-button"
                         type="button"
