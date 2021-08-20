@@ -224,7 +224,6 @@ const ProfileDetail = ({}) => {
                           <span>Address Zip : </span>
                           <span>{address?.zip || ""}</span>
                         </li>
-
                         <li className="col-12 col-md-6">
                           <span>Address Country : </span>
                           <span>{address?.country || ""}</span>
