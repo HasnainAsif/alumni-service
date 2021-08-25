@@ -170,134 +170,134 @@ const ProfileDetail = ({}) => {
                     <div className="col-12 col-md-12">
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Title : </span>
+                          <span>Title: </span>
                           <span>{title || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Firstname : </span>
+                          <span>First Name: </span>
                           <span>{firstname || ""}</span>
                         </li>
 
                         <li className="col-12 col-md-6">
-                          <span>Middlename : </span>
+                          <span>Middle Name: </span>
                           <span>{middlename || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Lastname : </span>
+                          <span>Last Name: </span>
                           <span>{lastname || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Marriedname : </span>
+                          <span>Married Name: </span>
                           <span>{marriedName || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Mothername : </span>
+                          <span>Mother's Name: </span>
                           <span>{motherName || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Fathername : </span>
+                          <span>Father's Name: </span>
                           <span>{fatherName || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Spousename : </span>
+                          <span>Spouse's Name: </span>
                           <span>{spouseName || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Address Line 1 : </span>
+                          <span>Address Line 1: </span>
                           <span>{address?.line1 || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Address Line 2 : </span>
+                          <span>Address Line 2: </span>
                           <span>{address?.line2 || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Address City : </span>
+                          <span>Address City: </span>
                           <span>{address?.city || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Address State : </span>
+                          <span>Address State: </span>
                           <span>{address?.state || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Address Zip : </span>
+                          <span>Address Zip: </span>
                           <span>{address?.zip || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Address Country : </span>
+                          <span>Address Country: </span>
                           <span>{address?.country || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Home Phone : </span>
+                          <span>Home Phone: </span>
                           <span>{homePhone || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Cell Phone : </span>
+                          <span>Cell Phone: </span>
                           <span>{cellPhone || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Work Phone : </span>
+                          <span>Work Phone: </span>
                           <span>{workPhone || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Email Address : </span>
+                          <span>Email Address: </span>
                           <span>{emailAddress || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Middleschool Name: </span>
+                          <span>Middle School Name: </span>
                           <span>{middleschool?.name || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Middleschool Year Started : </span>
+                          <span>Middle School Year Started: </span>
                           <span>{middleschool?.yearStarted || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>middleschool Year Ended : </span>
+                          <span>Middle School Year Ended: </span>
                           <span>{middleschool?.yearEnded || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Highschool Name: </span>
+                          <span>High School Name: </span>
                           <span>{highschool?.name || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Highschool Year Started : </span>
+                          <span>High School Year Started: </span>
                           <span>{highschool?.yearStarted || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Highschool Year Ended : </span>
+                          <span>High School Year Ended: </span>
                           <span>{highschool?.yearEnded || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Israelschool Name: </span>
+                          <span>Israel School Name: </span>
                           <span>{israelSchool?.name || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Israelschool Year Started : </span>
+                          <span>Israel School Year Started: </span>
                           <span>{israelSchool?.yearStarted || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Israelschool Year Ended : </span>
+                          <span>Israel School Year Ended: </span>
                           <span>{israelSchool?.yearEnded || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>CollegeAttended Name: </span>
+                          <span>College Name: </span>
                           <span>{collegeAttended?.name || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>CollegeAttended Year Started : </span>
+                          <span>College Year Started: </span>
                           <span>{collegeAttended?.yearStarted || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>CollegeAttended Year Ended : </span>
+                          <span>College Year Ended: </span>
                           <span>{collegeAttended?.yearEnded || ""}</span>
                         </li>
                       </ul>
@@ -309,11 +309,11 @@ const ProfileDetail = ({}) => {
                               <span>{item?.name || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Grad School Year Started : </span>
+                              <span>Grad School Year Started: </span>
                               <span>{item?.yearStarted || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Grad School Year Ended : </span>
+                              <span>Grad School Year Ended: </span>
                               <span>{item?.yearEnded || ""}</span>
                             </li>
                           </Fragment>
@@ -321,32 +321,32 @@ const ProfileDetail = ({}) => {
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Professions : </span>
+                          <span>Professions: </span>
                           <span>{profession?.join(", ") || ""}</span>
                         </li>
                       </ul>
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Clubs : </span>
+                          <span>Clubs: </span>
                           <span>{clubs?.join(", ") || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Sports Teams : </span>
+                          <span>Sports Teams: </span>
                           <span>{sportsTeams?.join(", ") || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Awards : </span>
+                          <span>Awards: </span>
                           <span>{awards?.join(", ") || ""}</span>
                         </li>
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Committees : </span>
+                          <span>Committees: </span>
                           <span>{committees?.join(", ") || ""}</span>
                         </li>
                       </ul>
@@ -355,27 +355,27 @@ const ProfileDetail = ({}) => {
                         {oldAddresses.map((item, index) => (
                           <Fragment key={index}>
                             <li className="col-12 col-md-6">
-                              <span>Old Addresses Line1: </span>
+                              <span>Previous Address Line: </span>
                               <span>{item?.line1 || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Old Addresses Line2 : </span>
+                              <span>Previous Address Line2: </span>
                               <span>{item?.line2 || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Old Addresses City : </span>
+                              <span>Previous Address City: </span>
                               <span>{item?.city || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Old Addresses State : </span>
+                              <span>Previous Address State: </span>
                               <span>{item?.state || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Old Addresses Zip : </span>
+                              <span>Previous Address Zip: </span>
                               <span>{item?.zip || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Old Addresses Country : </span>
+                              <span>Previous Address Country: </span>
                               <span>{item?.country || ""}</span>
                             </li>
                           </Fragment>
@@ -383,31 +383,31 @@ const ProfileDetail = ({}) => {
                       </ul>
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>HillelDayCamp Attended : </span>
+                          <span>Hillel Day Camp Attended: </span>
                           <span>
                             {hillelDayCamp?.attended ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelDayCamp Start Year : </span>
+                          <span>Hillel Day Camp Start Year: </span>
                           <span>{hillelDayCamp?.startYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelDayCamp End Year : </span>
+                          <span>Hillel Day Camp End Year: </span>
                           <span>{hillelDayCamp?.endYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelDayCamp Speciality : </span>
+                          <span>Hillel Day Camp Speciality: </span>
                           <span>{hillelDayCamp?.specialty || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelDayCamp Camper : </span>
+                          <span>Hillel Day Camp Camper: </span>
                           <span>
                             {hillelDayCamp?.camper ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelDayCamp Counselor : </span>
+                          <span>Hillel Day Camp Counselor: </span>
                           <span>
                             {hillelDayCamp?.counselor ? "True" : "False"}
                           </span>
@@ -416,31 +416,31 @@ const ProfileDetail = ({}) => {
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>HillelSleepCamp Attended : </span>
+                          <span>Hillel Sleep Away Attended: </span>
                           <span>
                             {hillelSleepCamp.attended ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelSleepCamp Start Year : </span>
+                          <span>Hillel Sleep Away Start Year: </span>
                           <span>{hillelSleepCamp?.startYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelSleepCamp End Year : </span>
+                          <span>Hillel Sleep Away End Year: </span>
                           <span>{hillelSleepCamp?.endYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelSleepCamp Speciality : </span>
+                          <span>Hillel Sleep Away Speciality: </span>
                           <span>{hillelSleepCamp?.specialty || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelSleepCamp Camper : </span>
+                          <span>Hillel Sleep Away Camper: </span>
                           <span>
                             {hillelSleepCamp?.camper ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HillelSleepCamp Counselor : </span>
+                          <span>Hillel Sleep Away Counselor: </span>
                           <span>
                             {hillelSleepCamp?.counselor ? "True" : "False"}
                           </span>
@@ -449,27 +449,27 @@ const ProfileDetail = ({}) => {
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>HiliDayCamp Attended : </span>
+                          <span>Hili Day Camp Attended: </span>
                           <span>{hiliDayCamp.attended ? "True" : "False"}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliDayCamp Start Year : </span>
+                          <span>Hili Day Camp Start Year: </span>
                           <span>{hiliDayCamp?.startYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliDayCamp End Year : </span>
+                          <span>Hili Day Camp End Year: </span>
                           <span>{hiliDayCamp?.endYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliDayCamp Speciality : </span>
+                          <span>Hili Day Camp Speciality: </span>
                           <span>{hiliDayCamp?.specialty || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliDayCamp Camper : </span>
+                          <span>Hili Day Camp Camper: </span>
                           <span>{hiliDayCamp?.camper ? "True" : "False"}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliDayCamp Counselor : </span>
+                          <span>Hili Day Camp Counselor: </span>
                           <span>
                             {hiliDayCamp?.counselor ? "True" : "False"}
                           </span>
@@ -478,31 +478,31 @@ const ProfileDetail = ({}) => {
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>HiliWhiteCamp Attended : </span>
+                          <span>Hili White Attended: </span>
                           <span>
                             {hiliWhiteCamp.attended ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliWhiteCamp Start Year : </span>
+                          <span>Hili White Start Year: </span>
                           <span>{hiliWhiteCamp?.startYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliWhiteCamp End Year : </span>
+                          <span>Hili White End Year: </span>
                           <span>{hiliWhiteCamp?.endYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliWhiteCamp Speciality : </span>
+                          <span>Hili White Speciality: </span>
                           <span>{hiliWhiteCamp?.specialty || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliWhiteCamp Camper : </span>
+                          <span>Hili White Camper: </span>
                           <span>
                             {hiliWhiteCamp?.camper ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliWhiteCamp Counselor : </span>
+                          <span>Hili White Counselor: </span>
                           <span>
                             {hiliWhiteCamp?.counselor ? "True" : "False"}
                           </span>
@@ -511,31 +511,31 @@ const ProfileDetail = ({}) => {
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>HiliInternationalCamp Attended : </span>
+                          <span>Hili International Attended: </span>
                           <span>
                             {hiliInternationalCamp.attended ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliInternationalCamp Start Year : </span>
+                          <span>Hili International Start Year: </span>
                           <span>{hiliInternationalCamp?.startYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliInternationalCamp End Year : </span>
+                          <span>Hili International End Year: </span>
                           <span>{hiliInternationalCamp?.endYear || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliInternationalCamp Speciality : </span>
+                          <span>Hili International Speciality: </span>
                           <span>{hiliInternationalCamp?.specialty || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliInternationalCamp Camper : </span>
+                          <span>Hili International Camper: </span>
                           <span>
                             {hiliInternationalCamp?.camper ? "True" : "False"}
                           </span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>HiliInternationalCamp Counselor : </span>
+                          <span>Hili International Counselor: </span>
                           <span>
                             {hiliInternationalCamp?.counselor
                               ? "True"
@@ -546,27 +546,27 @@ const ProfileDetail = ({}) => {
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
-                          <span>Hili : </span>
+                          <span>Hili: </span>
                           <span>{hili ? "True" : "False"}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Hillel : </span>
+                          <span>Hillel: </span>
                           <span>{hillel ? "True" : "False"}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Haftr : </span>
+                          <span>Haftr: </span>
                           <span>{haftr ? "True" : "False"}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>ParentOfStudent : </span>
+                          <span>Parent of Student: </span>
                           <span>{parentOfStudent ? "True" : "False"}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>Boards : </span>
+                          <span>Boards: </span>
                           <span>{boards?.join(", ") || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
-                          <span>AlumniPositions : </span>
+                          <span>Alumni Positions: </span>
                           <span>{alumniPositions?.join(", ") || ""}</span>
                         </li>
                       </ul>
@@ -575,42 +575,44 @@ const ProfileDetail = ({}) => {
                         {siblings.map((item, index) => (
                           <Fragment key={index}>
                             <li className="col-12 col-md-6">
-                              <span>Siblings firstname: </span>
+                              <span>Sibling's First Name: </span>
                               <span>{item?.firstname || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Siblings Lastname : </span>
+                              <span>Sibling's Last Name: </span>
                               <span>{item?.lastname || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Siblings Year Completed : </span>
+                              <span>Sibling's Year Completed: </span>
                               <span>{item?.yearCompleted || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Siblings MiddleSchool Name : </span>
+                              <span>Sibling's Middle School Name: </span>
                               <span>{item?.middleSchool.name || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Siblings MiddleSchool YearStarted : </span>
+                              <span>
+                                Sibling's Middle School Year Started:{" "}
+                              </span>
                               <span>
                                 {item?.middleSchool.yearStarted || ""}
                               </span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Siblings MiddleSchool YearEnded : </span>
+                              <span>Sibling's Middle School Year Ended: </span>
                               <span>{item?.middleSchool.yearEnded || ""}</span>
                             </li>
 
                             <li className="col-12 col-md-6">
-                              <span>Siblings HighSchool Name : </span>
+                              <span>Sibling's High School Name: </span>
                               <span>{item?.highSchool.name || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Siblings HighSchool YearStarted : </span>
+                              <span>Sibling's High School YearStarted: </span>
                               <span>{item?.highSchool.yearStarted || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Siblings HighSchool YearEnded : </span>
+                              <span>Sibling's High School YearEnded: </span>
                               <span>{item?.highSchool.yearEnded || ""}</span>
                             </li>
                           </Fragment>
@@ -621,26 +623,19 @@ const ProfileDetail = ({}) => {
                         {children.map((item, index) => (
                           <Fragment key={index}>
                             <li className="col-12 col-md-6">
-                              <span>Children firstname: </span>
+                              <span>Child's First Name: </span>
                               <span>{item?.firstname || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Children Lastname : </span>
+                              <span>Child's Last Name: </span>
                               <span>{item?.lastname || ""}</span>
                             </li>
                             <li className="col-12 col-md-6">
-                              <span>Children Graduation Year : </span>
+                              <span>Child's Graduation Year: </span>
                               <span>{item?.graduationYear || ""}</span>
                             </li>
                           </Fragment>
                         ))}
-                      </ul>
-
-                      <ul className="row profile-detail">
-                        <li className="col-12 col-md-6">
-                          <span>Comment : </span>
-                          <span>{comment || ""}</span>
-                        </li>
                       </ul>
                     </div>
                   </div>
