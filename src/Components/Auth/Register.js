@@ -1,12 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import serverRoutes from "../../Routes/serverRoutes";
-import browserRoutes from "../../Routes/browserRoutes";
 
 const Register = () => {
-  const history = useHistory();
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -18,9 +16,10 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    axios
+    setLoading(true);
+    await axios
       .post(serverRoutes.USERS, formData)
       .then((res) => {
         localStorage.setItem("token", JSON.stringify(res.data?.token));
@@ -34,6 +33,7 @@ const Register = () => {
           err?.response?.data?.message || err?.message || "Something happens..."
         );
       });
+    setLoading(false);
   };
   return (
     <div className="col-lg-6">
@@ -76,7 +76,20 @@ const Register = () => {
           </div>
 
           <div className="row mb-3 px-3">
-            <button type="submit" className="btn btn-blue text-center">
+            <button
+              type="submit"
+              className="btn btn-blue text-center"
+              disabled={loading}
+            >
+              {loading && (
+                <div
+                  class="spinner-border"
+                  role="status"
+                  style={{ width: "1.5rem", height: "1.5rem" }}
+                >
+                  <span class="sr-only">Loading...</span>
+                </div>
+              )}{" "}
               Register
             </button>
           </div>

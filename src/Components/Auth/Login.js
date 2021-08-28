@@ -10,6 +10,7 @@ import { UserContext } from "../../App";
 
 const Login = () => {
   const [user, setUser] = React.useContext(UserContext);
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
   const [formData, setFormData] = useState({
@@ -22,9 +23,10 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    axios
+    setLoading(true);
+    await axios
       .post(serverRoutes.LOGIN, formData)
       .then((res) => {
         setUser(res.data?.user);
@@ -44,7 +46,9 @@ const Login = () => {
           err?.response?.data?.message || err?.message || "Something happens..."
         );
       });
+    setLoading(false);
   };
+
   return (
     <div className="col-lg-6">
       <div className="card2 card border-0 px-4 py-5">
@@ -84,7 +88,20 @@ const Login = () => {
             />
           </div>
           <div className="row mb-3 px-3">
-            <button type="submit" className="btn btn-blue text-center">
+            <button
+              type="submit"
+              className="btn btn-blue text-center"
+              disabled={loading}
+            >
+              {loading && (
+                <div
+                  class="spinner-border"
+                  role="status"
+                  style={{ width: "1.5rem", height: "1.5rem" }}
+                >
+                  <span class="sr-only">Loading...</span>
+                </div>
+              )}{" "}
               Login
             </button>
           </div>
