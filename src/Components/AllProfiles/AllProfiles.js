@@ -100,35 +100,37 @@ const AllProfiles = () => {
               />
             </div>
           </div>
-          <div className="row mt-2">
-            <div className="col-lg-6">
-              <div>
-                <button
-                  className="btn selectwalletbutton my-2 my-sm-0"
-                  onClick={createNewProfile}
-                >
-                  Create New Profile
-                </button>
-              </div>
+          <div
+            className="row mt-2 d-flex"
+            style={{ justifyContent: "space-between" }}
+          >
+            {/* <div className="col-lg-6"> */}
+            <div>
+              <button
+                className="btn selectwalletbutton my-2 my-sm-0"
+                onClick={createNewProfile}
+              >
+                Create New Profile
+              </button>
             </div>
-            <div className="col-lg-6 d-flex myright">
-              <div>
-                <button
-                  className="btn selectwalletbutton "
-                  onClick={() => history.goBack()}
-                >
-                  Previous Page
-                </button>
-              </div>
-              <div>
-                <button
-                  className="btn selectwalletbutton ml-5"
-                  onClick={() => history.goForward()}
-                >
-                  Next Page
-                </button>
-              </div>
+            {/* </div>
+            <div className="col-lg-6 myright"> */}
+            <div>
+              <button
+                className="btn selectwalletbutton"
+                onClick={() => history.goBack()}
+              >
+                Previous Page
+              </button>
+
+              <button
+                className="btn selectwalletbutton ml-2"
+                onClick={() => history.goForward()}
+              >
+                Next Page
+              </button>
             </div>
+            {/* </div> */}
           </div>
         </div>
       </div>
