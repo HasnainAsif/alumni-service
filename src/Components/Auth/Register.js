@@ -83,11 +83,11 @@ const Register = () => {
             >
               {loading && (
                 <div
-                  class="spinner-border"
+                  className="spinner-border"
                   role="status"
                   style={{ width: "1.5rem", height: "1.5rem" }}
                 >
-                  <span class="sr-only">Loading...</span>
+                  <span className="sr-only">Loading...</span>
                 </div>
               )}{" "}
               Register

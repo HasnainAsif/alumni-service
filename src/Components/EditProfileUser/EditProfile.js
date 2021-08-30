@@ -677,7 +677,7 @@ const EditProfile = () => {
                     className="row mt-3 pt-2"
                     style={{ borderTop: "1px solid #fff" }}
                   >
-                    <div className="col-md-4 col-sm-6">
+                    {/* <div className="col-md-4 col-sm-6">
                       <label className="labels">comment</label>
                       <input
                         type="text"
@@ -687,8 +687,8 @@ const EditProfile = () => {
                         value={comment}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
-                    </div>
-                    {/* <div className="col-md-4 col-sm-6">
+                    </div> */}
+                    <div className="col-md-4 col-sm-6">
                       <label className="labels">Upload profilePictureURL</label>
                       <input
                         type="file"
@@ -696,7 +696,7 @@ const EditProfile = () => {
                         name="profilePictureURL"
                         onChange={(e) => onFileChange(e, formData, setFormData)}
                       />
-                    </div> */}
+                    </div>
                   </div>
                   <div className="mt-5 text-center">
                     <button

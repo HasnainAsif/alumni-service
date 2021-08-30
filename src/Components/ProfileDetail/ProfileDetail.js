@@ -186,7 +186,7 @@ const ProfileDetail = ({}) => {
                           <span>Last Name: </span>
                           <span>{lastname || ""}</span>
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Married Name: </span>
                           <span>{marriedName || ""}</span>
                         </li>
@@ -201,10 +201,10 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Spouse's Name: </span>
                           <span>{spouseName || ""}</span>
-                        </li>
+                        </li> */}
                       </ul>
                       <ul className="row profile-detail">
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Address Line 1: </span>
                           <span>{address?.line1 || ""}</span>
                         </li>
@@ -227,7 +227,7 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Address Country: </span>
                           <span>{address?.country || ""}</span>
-                        </li>
+                        </li> */}
                         <li className="col-12 col-md-6">
                           <span>Home Phone: </span>
                           <span>{homePhone || ""}</span>
@@ -236,16 +236,16 @@ const ProfileDetail = ({}) => {
                           <span>Cell Phone: </span>
                           <span>{cellPhone || ""}</span>
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Work Phone: </span>
                           <span>{workPhone || ""}</span>
-                        </li>
+                        </li> */}
                         <li className="col-12 col-md-6">
                           <span>Email Address: </span>
                           <span>{emailAddress || ""}</span>
                         </li>
                       </ul>
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Middle School Name: </span>
                           <span>{middleschool?.name || ""}</span>
@@ -272,8 +272,8 @@ const ProfileDetail = ({}) => {
                           <span>High School Year Ended: </span>
                           <span>{highschool?.yearEnded || ""}</span>
                         </li>
-                      </ul>
-                      <ul className="row profile-detail">
+                      </ul> */}
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Israel School Name: </span>
                           <span>{israelSchool?.name || ""}</span>
@@ -286,8 +286,8 @@ const ProfileDetail = ({}) => {
                           <span>Israel School Year Ended: </span>
                           <span>{israelSchool?.yearEnded || ""}</span>
                         </li>
-                      </ul>
-                      <ul className="row profile-detail">
+                      </ul> */}
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>College Name: </span>
                           <span>{collegeAttended?.name || ""}</span>
@@ -300,8 +300,8 @@ const ProfileDetail = ({}) => {
                           <span>College Year Ended: </span>
                           <span>{collegeAttended?.yearEnded || ""}</span>
                         </li>
-                      </ul>
-                      <ul className="row profile-detail">
+                      </ul> */}
+                      {/* <ul className="row profile-detail">
                         {gradSchools.map((item, index) => (
                           <Fragment key={index}>
                             <li className="col-12 col-md-6">
@@ -318,40 +318,40 @@ const ProfileDetail = ({}) => {
                             </li>
                           </Fragment>
                         ))}
-                      </ul>
-                      <ul className="row profile-detail">
+                      </ul> */}
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Professions: </span>
                           <span>{profession?.join(", ") || ""}</span>
                         </li>
-                      </ul>
+                      </ul> */}
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Clubs: </span>
                           <span>{clubs?.join(", ") || ""}</span>
                         </li>
-                      </ul>
-                      <ul className="row profile-detail">
+                      </ul> */}
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Sports Teams: </span>
                           <span>{sportsTeams?.join(", ") || ""}</span>
                         </li>
-                      </ul>
-                      <ul className="row profile-detail">
+                      </ul> */}
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Awards: </span>
                           <span>{awards?.join(", ") || ""}</span>
                         </li>
-                      </ul>
-                      <ul className="row profile-detail">
+                      </ul> */}
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Committees: </span>
                           <span>{committees?.join(", ") || ""}</span>
                         </li>
-                      </ul>
+                      </ul> */}
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         {oldAddresses.map((item, index) => (
                           <Fragment key={index}>
                             <li className="col-12 col-md-6">
@@ -380,9 +380,9 @@ const ProfileDetail = ({}) => {
                             </li>
                           </Fragment>
                         ))}
-                      </ul>
+                      </ul> */}
                       <ul className="row profile-detail">
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Attended: </span>
                           <span>
                             {hillelDayCamp?.attended ? "True" : "False"}
@@ -399,29 +399,52 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Speciality: </span>
                           <span>{hillelDayCamp?.specialty || ""}</span>
-                        </li>
+                        </li> */}
                         <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Camper: </span>
-                          <span>
+
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hillelDayCamp?.camper}
+                            disabled
+                          />
+
+                          {/* <span>
                             {hillelDayCamp?.camper ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Counselor: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hillelDayCamp?.counselor}
+                            disabled
+                          />
+                          {/* <span>
                             {hillelDayCamp?.counselor ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                       </ul>
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Attended: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hillelSleepCamp.attended}
+                            disabled
+                          />
+                          {/* <span>
                             {hillelSleepCamp.attended ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Start Year: </span>
                           <span>{hillelSleepCamp?.startYear || ""}</span>
                         </li>
@@ -432,27 +455,48 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Speciality: </span>
                           <span>{hillelSleepCamp?.specialty || ""}</span>
-                        </li>
+                        </li> */}
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Camper: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hillelSleepCamp?.camper}
+                            disabled
+                          />
+                          {/* <span>
                             {hillelSleepCamp?.camper ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Counselor: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hillelSleepCamp?.counselor}
+                            disabled
+                          />
+                          {/* <span>
                             {hillelSleepCamp?.counselor ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                       </ul>
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Attended: </span>
-                          <span>{hiliDayCamp.attended ? "True" : "False"}</span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliDayCamp.attended}
+                            disabled
+                          />
+                          {/* <span>{hiliDayCamp.attended ? "True" : "False"}</span> */}
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Hili Day Camp Start Year: </span>
                           <span>{hiliDayCamp?.startYear || ""}</span>
                         </li>
@@ -463,27 +507,48 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Speciality: </span>
                           <span>{hiliDayCamp?.specialty || ""}</span>
-                        </li>
+                        </li> */}
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Camper: </span>
-                          <span>{hiliDayCamp?.camper ? "True" : "False"}</span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliDayCamp?.camper}
+                            disabled
+                          />
+                          {/* <span>{hiliDayCamp?.camper ? "True" : "False"}</span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Counselor: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliDayCamp?.counselor}
+                            disabled
+                          />
+                          {/* <span>
                             {hiliDayCamp?.counselor ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                       </ul>
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hili White Attended: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliWhiteCamp.attended}
+                            disabled
+                          />
+                          {/* <span>
                             {hiliWhiteCamp.attended ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Hili White Start Year: </span>
                           <span>{hiliWhiteCamp?.startYear || ""}</span>
                         </li>
@@ -494,29 +559,50 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hili White Speciality: </span>
                           <span>{hiliWhiteCamp?.specialty || ""}</span>
-                        </li>
+                        </li> */}
                         <li className="col-12 col-md-6">
                           <span>Hili White Camper: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliWhiteCamp?.camper}
+                            disabled
+                          />
+                          {/* <span>
                             {hiliWhiteCamp?.camper ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hili White Counselor: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliWhiteCamp?.counselor}
+                            disabled
+                          />
+                          {/* <span>
                             {hiliWhiteCamp?.counselor ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                       </ul>
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hili International Attended: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliInternationalCamp.attended}
+                            disabled
+                          />
+                          {/* <span>
                             {hiliInternationalCamp.attended ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Hili International Start Year: </span>
                           <span>{hiliInternationalCamp?.startYear || ""}</span>
                         </li>
@@ -527,51 +613,93 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hili International Speciality: </span>
                           <span>{hiliInternationalCamp?.specialty || ""}</span>
-                        </li>
+                        </li> */}
                         <li className="col-12 col-md-6">
                           <span>Hili International Camper: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliInternationalCamp?.camper}
+                            disabled
+                          />
+                          {/* <span>
                             {hiliInternationalCamp?.camper ? "True" : "False"}
-                          </span>
+                          </span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hili International Counselor: </span>
-                          <span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hiliInternationalCamp?.counselor}
+                            disabled
+                          />
+                          {/* <span>
                             {hiliInternationalCamp?.counselor
                               ? "True"
                               : "False"}
-                          </span>
+                          </span> */}
                         </li>
                       </ul>
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hili: </span>
-                          <span>{hili ? "True" : "False"}</span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hili}
+                            disabled
+                          />
+                          {/* <span>{hili ? "True" : "False"}</span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel: </span>
-                          <span>{hillel ? "True" : "False"}</span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={hillel}
+                            disabled
+                          />
+                          {/* <span>{hillel ? "True" : "False"}</span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Haftr: </span>
-                          <span>{haftr ? "True" : "False"}</span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={haftr}
+                            disabled
+                          />
+                          {/* <span>{haftr ? "True" : "False"}</span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Parent of Student: </span>
-                          <span>{parentOfStudent ? "True" : "False"}</span>
+                          <input
+                            type="checkbox"
+                            className="form-control"
+                            placeholder="Enter hillelDayCamp Attended"
+                            checked={parentOfStudent}
+                            disabled
+                          />
+                          {/* <span>{parentOfStudent ? "True" : "False"}</span> */}
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Boards: </span>
                           <span>{boards?.join(", ") || ""}</span>
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Alumni Positions: </span>
                           <span>{alumniPositions?.join(", ") || ""}</span>
-                        </li>
+                        </li> */}
                       </ul>
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         {siblings.map((item, index) => (
                           <Fragment key={index}>
                             <li className="col-12 col-md-6">
@@ -617,9 +745,9 @@ const ProfileDetail = ({}) => {
                             </li>
                           </Fragment>
                         ))}
-                      </ul>
+                      </ul> */}
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         {children.map((item, index) => (
                           <Fragment key={index}>
                             <li className="col-12 col-md-6">
@@ -636,7 +764,7 @@ const ProfileDetail = ({}) => {
                             </li>
                           </Fragment>
                         ))}
-                      </ul>
+                      </ul> */}
                     </div>
                   </div>
                 </div>

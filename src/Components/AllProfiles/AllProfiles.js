@@ -17,12 +17,22 @@ const AllProfiles = () => {
   };
 
   const columns = [
-    { title: "Title", field: "title" },
     { title: "Firstname", field: "firstname" },
     { title: "Lastname", field: "lastname" },
-    { title: "Marriedname", field: "marriedName" },
-    { title: "Mothername", field: "motherName" },
-    { title: "Fathername", field: "fatherName" },
+    { title: "Cellphone", field: "cellPhone" },
+    { title: "Emailaddress", field: "emailAddress" },
+    {
+      field: "id",
+      title: "Explore",
+      render: (rowData) => (
+        <button
+          className="btn selectwalletbutton"
+          onClick={history.push(
+            browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id
+          )}
+        />
+      ),
+    },
   ];
 
   useEffect(() => {
