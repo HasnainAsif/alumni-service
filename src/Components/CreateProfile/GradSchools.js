@@ -54,11 +54,11 @@ const GradSchools = ({ formData, setFormData }) => {
       {countFields.map((item, index) => (
         <Fragment key={item.count}>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">Grad Schools Name</label>
+            <label className="labels">Grad School Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Grad Schools Name"
+              placeholder="Enter Grad School Name"
               name="name"
               value={gradSchools?.name}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -78,11 +78,11 @@ const GradSchools = ({ formData, setFormData }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">Grad Schools Year Ended</label>
+            <label className="labels">Grad School Year Ended</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Grad Schools Year Ended"
+              placeholder="Enter Grad School Year Ended"
               name="yearEnded"
               value={gradSchools?.yearEnded}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}

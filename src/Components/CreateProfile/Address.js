@@ -8,33 +8,33 @@ const Address = ({ formData, setFormData }) => {
     <div className="row mt-3 pt-2" style={{ borderTop: "1px solid #fff" }}>
       {/* <hr className="" /> */}
       <div className="col-md-4 col-sm-6">
-        <label className="labels">Address Line1</label>
+        <label className="labels">Address Line 1</label>
         <input
           type="text"
           className="form-control"
-          placeholder="Enter Address Line1"
+          placeholder="Enter Address Line 1"
           name="address.line1"
           value={address?.line1}
           onChange={(e) => onChange(e, formData, setFormData)}
         />
       </div>
       <div className="col-md-4 col-sm-6">
-        <label className="labels">Address Line2</label>
+        <label className="labels">Address Line 2</label>
         <input
           type="text"
           className="form-control"
-          placeholder="Enter Address Line2"
+          placeholder="Enter Address Line 2"
           name="address.line2"
           value={address?.line2}
           onChange={(e) => onChange(e, formData, setFormData)}
         />
       </div>
       <div className="col-md-4 col-sm-6">
-        <label className="labels">Address city</label>
+        <label className="labels">Address City</label>
         <input
           type="text"
           className="form-control"
-          placeholder="Enter Address city"
+          placeholder="Enter Address City"
           name="address.city"
           value={address?.city}
           onChange={(e) => onChange(e, formData, setFormData)}

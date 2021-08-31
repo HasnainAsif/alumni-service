@@ -6,33 +6,33 @@ const CollegeAttended = ({ formData, setFormData }) => {
   return (
     <div className="row mt-3 pt-2" style={{ borderTop: "1px solid #fff" }}>
       <div className="col-md-4 col-sm-6">
-        <label className="labels">College Attended Name</label>
+        <label className="labels">College Name</label>
         <input
           type="text"
           className="form-control"
-          placeholder="Enter College Attended Name"
+          placeholder="Enter College Name"
           name="collegeAttended.name"
           value={collegeAttended?.name}
           onChange={(e) => onChange(e, formData, setFormData)}
         />
       </div>
       <div className="col-md-4 col-sm-6">
-        <label className="labels">College Attended Year Started</label>
+        <label className="labels">College Year Started</label>
         <input
           type="text"
           className="form-control"
-          placeholder="Enter College Attended Year Started"
+          placeholder="Enter College Year Started"
           name="collegeAttended.yearStarted"
           value={collegeAttended?.yearStarted}
           onChange={(e) => onChange(e, formData, setFormData)}
         />
       </div>
       <div className="col-md-4 col-sm-6">
-        <label className="labels">College Attended Year Ended</label>
+        <label className="labels">College Year Ended</label>
         <input
           type="text"
           className="form-control"
-          placeholder="Enter College Attended Year Ended"
+          placeholder="Enter College Year Ended"
           name="collegeAttended.yearEnded"
           value={collegeAttended?.yearEnded}
           onChange={(e) => onChange(e, formData, setFormData)}

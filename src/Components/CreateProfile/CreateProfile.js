@@ -175,44 +175,48 @@ const CreateProfile = () => {
                     style={{ borderTop: "1px solid #fff" }}
                   >
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hillelDayCamp Start Year</label>
+                      <label className="labels">
+                        Hillel Day Camp Start Year
+                      </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hillelDayCamp Start Year"
+                        placeholder="Enter Hillel Day Camp Start Year"
                         name="hillelDayCamp.startYear"
                         value={hillelDayCamp?.startYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hillelDayCamp End Year</label>
+                      <label className="labels">Hillel Day Camp End Year</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hillelDayCamp End Year"
+                        placeholder="Enter Hillel Day Camp End Year"
                         name="hillelDayCamp.endYear"
                         value={hillelDayCamp?.endYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hillelDayCamp Specialty</label>
+                      <label className="labels">
+                        Hillel Day Camp Specialty
+                      </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hillelDayCamp Specialty"
+                        placeholder="Enter Hillel Day Camp Specialty"
                         name="hillelDayCamp.specialty"
                         value={hillelDayCamp?.specialty}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hillelDayCamp Attended</label>
+                      <label className="labels">Hillel Day Camp Attended</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hillelDayCamp Attended"
+                        placeholder="Enter Hillel Day Camp Attended"
                         name="hillelDayCamp.attended"
                         value={hillelDayCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -220,11 +224,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hillelDayCamp Camper</label>
+                      <label className="labels">Hillel Day Camp Camper</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hillelDayCamp Camper"
+                        placeholder="Enter Hillel Day Camp Camper"
                         name="hillelDayCamp.camper"
                         value={hillelDayCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -232,11 +236,13 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hillelDayCamp Counselor</label>
+                      <label className="labels">
+                        Hillel Day Camp Counselor
+                      </label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hillelDayCamp Counselor"
+                        placeholder="Enter Hillel Day Camp Counselor"
                         name="hillelDayCamp.counselor"
                         value={hillelDayCamp?.counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -250,23 +256,25 @@ const CreateProfile = () => {
                   >
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        HillelSleepCamp Start Year
+                        Hillel Sleep Away Start Year
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hillelSleepCamp Start Year"
+                        placeholder="Enter Hillel Sleep Away Start Year"
                         name="hillelSleepCamp.startYear"
                         value={hillelSleepCamp?.startYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">HillelSleepCamp End Year</label>
+                      <label className="labels">
+                        Hillel Sleep Away End Year
+                      </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hillelSleepCamp End Year"
+                        placeholder="Enter Hillel Sleep Away End Year"
                         name="hillelSleepCamp.endYear"
                         value={hillelSleepCamp?.endYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -274,23 +282,25 @@ const CreateProfile = () => {
                     </div>
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        HillelSleepCamp Specialty
+                        Hillel Sleep Away Specialty
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hillelSleepCamp Specialty"
+                        placeholder="Enter Hillel Sleep Away Specialty"
                         name="hillelSleepCamp.specialty"
                         value={hillelSleepCamp?.specialty}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">HillelSleepCamp Attended</label>
+                      <label className="labels">
+                        Hillel Sleep Away Attended
+                      </label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hillelSleepCamp Attended"
+                        placeholder="Enter Hillel Sleep Away Attended"
                         name="hillelSleepCamp.attended"
                         value={hillelSleepCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -298,11 +308,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">HillelSleepCamp Camper</label>
+                      <label className="labels">Hillel Sleep Away Camper</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hillelSleepCamp Camper"
+                        placeholder="Enter Hillel Sleep Away Camper"
                         name="hillelSleepCamp.camper"
                         value={hillelSleepCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -311,12 +321,12 @@ const CreateProfile = () => {
                     </div>
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        HillelSleepCamp Counselor
+                        Hillel Sleep Away Counselor
                       </label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hillelSleepCamp Counselor"
+                        placeholder="Enter Hillel Sleep Away Counselor"
                         name="hillelSleepCamp.counselor"
                         value={hillelSleepCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -329,44 +339,44 @@ const CreateProfile = () => {
                     style={{ borderTop: "1px solid #fff" }}
                   >
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliDayCamp Start Year</label>
+                      <label className="labels">Hili Day Camp Start Year</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliDayCamp Start Year"
+                        placeholder="Enter Hili Day Camp Start Year"
                         name="hiliDayCamp.startYear"
                         value={hiliDayCamp?.startYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliDayCamp End Year</label>
+                      <label className="labels">Hili Day Camp End Year</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliDayCamp End Year"
+                        placeholder="Enter Hili Day Camp End Year"
                         name="hiliDayCamp.endYear"
                         value={hiliDayCamp?.endYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliDayCamp Specialty</label>
+                      <label className="labels">Hili Day Camp Specialty</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliDayCamp Specialty"
+                        placeholder="Enter Hili Day Camp Specialty"
                         name="hiliDayCamp.specialty"
                         value={hiliDayCamp?.specialty}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliDayCamp Attended</label>
+                      <label className="labels">Hili Day Camp Attended</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliDayCamp Attended"
+                        placeholder="Enter Hili Day Camp Attended"
                         name="hiliDayCamp.attended"
                         value={hiliDayCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -374,11 +384,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliDayCamp Camper</label>
+                      <label className="labels">Hili Day Camp Camper</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliDayCamp Camper"
+                        placeholder="Enter Hili Day Camp Camper"
                         name="hiliDayCamp.camper"
                         value={hiliDayCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -386,11 +396,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliDayCamp Counselor</label>
+                      <label className="labels">Hili Day Camp Counselor</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliDayCamp Counselor"
+                        placeholder="Enter Hili Day Camp Counselor"
                         name="hiliDayCamp.counselor"
                         value={hiliDayCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -403,44 +413,48 @@ const CreateProfile = () => {
                     style={{ borderTop: "1px solid #fff" }}
                   >
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliWhiteCamp Start Year</label>
+                      <label className="labels">
+                        Hili White Camp Start Year
+                      </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliWhiteCamp Start Year"
+                        placeholder="Enter Hili White Camp Start Year"
                         name="hiliWhiteCamp.startYear"
                         value={hiliWhiteCamp?.startYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliWhiteCamp End Year</label>
+                      <label className="labels">Hili White Camp End Year</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliWhiteCamp End Year"
+                        placeholder="Enter Hili White Camp End Year"
                         name="hiliWhiteCamp.endYear"
                         value={hiliWhiteCamp?.endYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliWhiteCamp Specialty</label>
+                      <label className="labels">
+                        Hili White Camp Specialty
+                      </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliWhiteCamp Specialty"
+                        placeholder="Enter Hili White Camp Specialty"
                         name="hiliWhiteCamp.specialty"
                         value={hiliWhiteCamp?.specialty}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliWhiteCamp Attended</label>
+                      <label className="labels">Hili White Camp Attended</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliWhiteCamp Attended"
+                        placeholder="Enter Hili White Camp Attended"
                         name="hiliWhiteCamp.attended"
                         value={hiliWhiteCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -448,11 +462,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliWhiteCamp Camper</label>
+                      <label className="labels">Hili White Camp Camper</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliWhiteCamp Camper"
+                        placeholder="Enter Hili White Camp Camper"
                         name="hiliWhiteCamp.camper"
                         value={hiliWhiteCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -460,11 +474,13 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hiliWhiteCamp Counselor</label>
+                      <label className="labels">
+                        Hili White Camp Counselor
+                      </label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliWhiteCamp Counselor"
+                        placeholder="Enter Hili White Camp Counselor"
                         name="hiliWhiteCamp.counselor"
                         value={hiliWhiteCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -478,12 +494,12 @@ const CreateProfile = () => {
                   >
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        hiliInternationalCamp Start Year
+                        Hili International Start Year
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliInternationalCamp Start Year"
+                        placeholder="Enter Hili International Start Year"
                         name="hiliInternationalCamp.startYear"
                         value={hiliInternationalCamp?.startYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -491,12 +507,12 @@ const CreateProfile = () => {
                     </div>
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        hiliInternationalCamp End Year
+                        Hili International End Year
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliInternationalCamp End Year"
+                        placeholder="Enter Hili International End Year"
                         name="hiliInternationalCamp.endYear"
                         value={hiliInternationalCamp?.endYear}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -504,12 +520,12 @@ const CreateProfile = () => {
                     </div>
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        hiliInternationalCamp Specialty
+                        Hili International Specialty
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter hiliInternationalCamp Specialty"
+                        placeholder="Enter Hili International Specialty"
                         name="hiliInternationalCamp.specialty"
                         value={hiliInternationalCamp?.specialty}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -517,12 +533,12 @@ const CreateProfile = () => {
                     </div>
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        hiliInternationalCamp Attended
+                        Hili International Attended
                       </label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliInternationalCamp Attended"
+                        placeholder="Enter Hili International Attended"
                         name="hiliInternationalCamp.attended"
                         value={hiliInternationalCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -531,12 +547,12 @@ const CreateProfile = () => {
                     </div>
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        hiliInternationalCamp Camper
+                        Hili International Camper
                       </label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliInternationalCamp Camper"
+                        placeholder="Enter Hili International Camper"
                         name="hiliInternationalCamp.camper"
                         value={hiliInternationalCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -545,12 +561,12 @@ const CreateProfile = () => {
                     </div>
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">
-                        hiliInternationalCamp Counselor
+                        Hili International Counselor
                       </label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hiliInternationalCamp Counselor"
+                        placeholder="Enter Hili International Counselor"
                         name="hiliInternationalCamp.counselor"
                         value={hiliInternationalCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -563,11 +579,11 @@ const CreateProfile = () => {
                     style={{ borderTop: "1px solid #fff" }}
                   >
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">boards</label>
+                      <label className="labels">Boards</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter boards"
+                        placeholder="Enter Boards"
                         name="boards"
                         value={boards}
                         onChange={(e) =>
@@ -576,11 +592,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">alumniPositions</label>
+                      <label className="labels">Alumni Positions</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter alumniPositions"
+                        placeholder="Enter Alumni Positions"
                         name="alumniPositions"
                         value={alumniPositions}
                         onChange={(e) =>
@@ -589,11 +605,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hili</label>
+                      <label className="labels">Hili</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hili"
+                        placeholder="Enter Hili"
                         name="hili"
                         value={hili}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -601,11 +617,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">hillel</label>
+                      <label className="labels">Hillel</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter hillel"
+                        placeholder="Enter Hillel"
                         name="hillel"
                         value={hillel}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -613,11 +629,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">haftr</label>
+                      <label className="labels">Haftr</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter haftr"
+                        placeholder="Enter Haftr"
                         name="haftr"
                         value={haftr}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -625,11 +641,11 @@ const CreateProfile = () => {
                       />
                     </div>
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">parentOfStudent</label>
+                      <label className="labels">Parent Of Student</label>
                       <input
                         type="checkbox"
                         className="form-control"
-                        placeholder="Enter parentOfStudent"
+                        placeholder="Enter Parent Of Student"
                         name="parentOfStudent"
                         value={parentOfStudent}
                         onChange={(e) => onChange(e, formData, setFormData)}
@@ -643,8 +659,8 @@ const CreateProfile = () => {
                     className="row mt-3 pt-2"
                     style={{ borderTop: "1px solid #fff" }}
                   >
-                    <div className="col-md-4 col-sm-6">
-                      <label className="labels">comment</label>
+                    {/* <div className="col-md-4 col-sm-6">
+                      <label className="labels">Comment</label>
                       <input
                         type="text"
                         className="form-control"
@@ -653,9 +669,9 @@ const CreateProfile = () => {
                         value={comment}
                         onChange={(e) => onChange(e, formData, setFormData)}
                       />
-                    </div>
+                    </div> */}
                     <div className="col-md-4 col-sm-6">
-                      <label className="labels">Upload profilePictureURL</label>
+                      <label className="labels">Upload profile Picture</label>
                       <input
                         type="file"
                         style={{ color: "white" }}

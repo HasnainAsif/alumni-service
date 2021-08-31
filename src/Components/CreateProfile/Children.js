@@ -58,11 +58,11 @@ const Children = ({ formData, setFormData }) => {
       {countFields.map((item, index) => (
         <Fragment key={item.count}>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">children firstname</label>
+            <label className="labels">Child's First Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter children firstname"
+              placeholder="Enter Child's First Name"
               name="firstname"
               value={children?.firstname}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -70,11 +70,11 @@ const Children = ({ formData, setFormData }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">children lastname</label>
+            <label className="labels">Child's Last Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter children lastname"
+              placeholder="Enter Child's Last Name"
               name="lastname"
               value={children?.lastname}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -82,11 +82,11 @@ const Children = ({ formData, setFormData }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">children graduationYear</label>
+            <label className="labels">Child's Graduation Year</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter children graduationYear"
+              placeholder="Enter Child's Graduation Year"
               name="graduationYear"
               value={children?.graduationYear}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}

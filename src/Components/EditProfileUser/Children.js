@@ -69,11 +69,11 @@ const Children = ({ formData, setFormData, childrenFields }) => {
       {countFields.map((item, index) => (
         <Fragment key={item.count}>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">children firstname</label>
+            <label className="labels">Child's First Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter children firstname"
+              placeholder="Enter Child's First Name"
               name="firstname"
               value={children[item.count]?.firstname}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -81,11 +81,11 @@ const Children = ({ formData, setFormData, childrenFields }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">children lastname</label>
+            <label className="labels">Child's Last Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter children lastname"
+              placeholder="Enter Child's Last Name"
               name="lastname"
               value={children[item.count]?.lastname}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -93,11 +93,11 @@ const Children = ({ formData, setFormData, childrenFields }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">children graduationYear</label>
+            <label className="labels">Child's Graduation Year</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter children graduationYear"
+              placeholder="Enter Child's Graduation Year"
               name="graduationYear"
               value={children[item.count]?.graduationYear}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}

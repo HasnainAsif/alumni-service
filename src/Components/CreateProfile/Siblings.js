@@ -104,11 +104,11 @@ const Siblings = ({ formData, setFormData }) => {
       {countFields.map((item, index) => (
         <Fragment key={item.count}>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">siblings firstname</label>
+            <label className="labels">Sibling's First Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings firstname"
+              placeholder="Enter Sibling's First Name"
               name="firstname"
               value={siblings?.firstname}
               onChange={(e) => onChange(e, formData, setFormData)}
@@ -116,11 +116,11 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">siblings lastname</label>
+            <label className="labels">Sibling's Last Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings lastname"
+              placeholder="Enter Sibling's Last Name"
               name="lastname"
               value={siblings?.lastname}
               onChange={(e) => onChange(e, formData, setFormData)}
@@ -128,11 +128,11 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">siblings yearCompleted</label>
+            <label className="labels">Sibling's Year Completed</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings yearCompleted"
+              placeholder="Enter Sibling's Year Completed"
               name="yearCompleted"
               value={siblings?.yearCompleted}
               onChange={(e) => onChange(e, formData, setFormData)}
@@ -140,11 +140,11 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">siblings middleSchool name</label>
+            <label className="labels">Sibling's Middle School Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings middleSchool name"
+              placeholder="Enter Sibling's Middle School Name"
               name="name"
               value={siblings?.middleSchool?.name}
               onChange={(e) => onChangeMiddleschool(e, formData, setFormData)}
@@ -152,11 +152,13 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">siblings middleSchool yearStarted</label>
+            <label className="labels">
+              Sibling's Middle School Year Started
+            </label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings middleSchool yearStarted"
+              placeholder="Enter Sibling's Middle School Year Started"
               name="yearStarted"
               value={siblings?.middleSchool?.yearStarted}
               onChange={(e) => onChangeMiddleschool(e, formData, setFormData)}
@@ -164,11 +166,11 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">siblings middleSchool yearEnded</label>
+            <label className="labels">Siblings Middle School Year Ended</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings middleSchool yearEnded"
+              placeholder="Enter Siblings Middle School Year Ended"
               name="yearEnded"
               value={siblings?.middleSchool?.yearEnded}
               onChange={(e) => onChangeMiddleschool(e, formData, setFormData)}
@@ -176,11 +178,11 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">siblings highSchool name</label>
+            <label className="labels">Sibling's High School Name</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings highSchool name"
+              placeholder="Enter Sibling's High School Name"
               name="name"
               value={siblings?.highSchool?.name}
               onChange={(e) => onChangeHighschool(e, formData, setFormData)}
@@ -188,11 +190,11 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">siblings highSchool yearStarted</label>
+            <label className="labels">Siblings High School YearStarted</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings highSchool yearStarted"
+              placeholder="Enter Siblings High School YearStarted"
               name="yearStarted"
               value={siblings?.highSchool?.yearStarted}
               onChange={(e) => onChangeHighschool(e, formData, setFormData)}
@@ -200,11 +202,11 @@ const Siblings = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">siblings highSchool yearEnded</label>
+            <label className="labels">Siblings High School YearEnded</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter siblings highSchool yearEnded"
+              placeholder="Enter Siblings High School YearEnded"
               name="yearEnded"
               value={siblings?.highSchool?.yearEnded}
               onChange={(e) => onChangeHighschool(e, formData, setFormData)}

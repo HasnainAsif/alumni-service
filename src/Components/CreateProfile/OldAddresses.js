@@ -61,11 +61,11 @@ const OldAddresses = ({ formData, setFormData }) => {
       {countFields.map((item, index) => (
         <Fragment key={item.count}>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">Old Addresses Line1</label>
+            <label className="labels">Previous Addresses Line1</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Old Addresses Line1"
+              placeholder="Enter Previous Addresses Line1"
               name="line1"
               value={oldAddresses?.line1}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -73,11 +73,11 @@ const OldAddresses = ({ formData, setFormData }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">Old Addresses Line2</label>
+            <label className="labels">Previous Addresses Line2</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Old Addresses Line2"
+              placeholder="Enter Previous Addresses Line2"
               name="line2"
               value={oldAddresses?.line2}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -85,11 +85,11 @@ const OldAddresses = ({ formData, setFormData }) => {
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
-            <label className="labels">Old Addresses City</label>
+            <label className="labels">Previous Addresses City</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Old Addresses City"
+              placeholder="Enter Previous Addresses City"
               name="city"
               value={oldAddresses?.city}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -97,11 +97,11 @@ const OldAddresses = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">Old Addresses State</label>
+            <label className="labels">Previous Addresses State</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Old Addresses State"
+              placeholder="Enter Previous Addresses State"
               name="state"
               value={oldAddresses?.state}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -109,11 +109,11 @@ const OldAddresses = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">Old Addresses Zip</label>
+            <label className="labels">Previous Addresses Zip</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Old Addresses Zip"
+              placeholder="Enter Previous Addresses Zip"
               name="zip"
               value={oldAddresses?.zip}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
@@ -121,11 +121,11 @@ const OldAddresses = ({ formData, setFormData }) => {
             />
           </div>
           <div className="col-md-4 col-sm-6">
-            <label className="labels">Old Addresses Country</label>
+            <label className="labels">Previous Addresses Country</label>
             <input
               type="text"
               className="form-control"
-              placeholder="Enter Old Addresses Country"
+              placeholder="Enter Previous Addresses Country"
               name="country"
               value={oldAddresses?.country}
               onChange={(e) => onChangeArrayType(e, formData, setFormData)}
