@@ -1,11 +1,18 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import browserRoutes from "../../Routes/browserRoutes";
 import serverRoutes from "../../Routes/serverRoutes";
 
+import { UserContext } from "../../App";
+import setAuthToken from "../../utils/setAuthToken";
+import { useHistory } from "react-router-dom";
+
 const Register = () => {
+  const [user, setUser] = React.useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
+  const history = useHistory();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -22,10 +29,13 @@ const Register = () => {
     await axios
       .post(serverRoutes.USERS, formData)
       .then((res) => {
+        setUser({ ...res.data?.user });
         localStorage.setItem("token", JSON.stringify(res.data?.token));
         localStorage.setItem("user", JSON.stringify(res.data?.user));
+        setAuthToken(res.data?.token);
         toast.success("Registered Successfully");
         setFormData({ email: "", password: "" });
+        history.push(browserRoutes.CREATE_PROFILES);
       })
       .catch((err) => {
         console.log(err.response);

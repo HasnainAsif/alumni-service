@@ -36,6 +36,8 @@ const EditProfile = () => {
   const [siblingsFields, setSiblingsFields] = useState([]);
   const [childrenFields, setChildrenFields] = useState([]);
 
+  const [image, setImage] = useState("");
+
   const {
     profession,
     birthday,
@@ -253,6 +255,7 @@ const EditProfile = () => {
                         placeholder="Enter Hillel Day Camp Attended"
                         name="hillelDayCamp.attended"
                         value={hillelDayCamp?.attended}
+                        defaultChecked={hillelDayCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -265,6 +268,7 @@ const EditProfile = () => {
                         placeholder="Enter Hillel Day Camp Camper"
                         name="hillelDayCamp.camper"
                         value={hillelDayCamp?.camper}
+                        defaultChecked={hillelDayCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -279,6 +283,7 @@ const EditProfile = () => {
                         placeholder="Enter Hillel Day Camp Counselor"
                         name="hillelDayCamp.counselor"
                         value={hillelDayCamp?.counselor}
+                        defaultChecked={hillelDayCamp?.counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -337,6 +342,7 @@ const EditProfile = () => {
                         placeholder="Enter Hillel Sleep Away Attended"
                         name="hillelSleepCamp.attended"
                         value={hillelSleepCamp?.attended}
+                        defaultChecked={hillelSleepCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -349,6 +355,7 @@ const EditProfile = () => {
                         placeholder="Enter Hillel Sleep Away Camper"
                         name="hillelSleepCamp.camper"
                         value={hillelSleepCamp?.camper}
+                        defaultChecked={hillelSleepCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -363,6 +370,7 @@ const EditProfile = () => {
                         placeholder="Enter Hillel Sleep Away Counselor"
                         name="hillelSleepCamp.counselor"
                         value={hillelSleepCamp?.Counselor}
+                        defaultChecked={hillelSleepCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -413,6 +421,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili Day Camp Attended"
                         name="hiliDayCamp.attended"
                         value={hiliDayCamp?.attended}
+                        defaultChecked={hiliDayCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -425,6 +434,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili Day Camp Camper"
                         name="hiliDayCamp.camper"
                         value={hiliDayCamp?.camper}
+                        defaultChecked={hiliDayCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -437,6 +447,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili Day Camp Counselor"
                         name="hiliDayCamp.counselor"
                         value={hiliDayCamp?.Counselor}
+                        defaultChecked={hiliDayCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -491,6 +502,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili White Camp Attended"
                         name="hiliWhiteCamp.attended"
                         value={hiliWhiteCamp?.attended}
+                        defaultChecked={hiliWhiteCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -503,6 +515,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili White Camp Camper"
                         name="hiliWhiteCamp.camper"
                         value={hiliWhiteCamp?.camper}
+                        defaultChecked={hiliWhiteCamp?.camper}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -517,6 +530,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili White Camp Counselor"
                         name="hiliWhiteCamp.counselor"
                         value={hiliWhiteCamp?.Counselor}
+                        defaultChecked={hiliWhiteCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -575,6 +589,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili International Attended"
                         name="hiliInternationalCamp.attended"
                         value={hiliInternationalCamp?.attended}
+                        defaultChecked={hiliInternationalCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -589,6 +604,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili International Camper"
                         name="hiliInternationalCamp.camper"
                         value={hiliInternationalCamp?.camper}
+                        defaultChecked={hiliInternationalCamp?.attended}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -603,6 +619,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili International Counselor"
                         name="hiliInternationalCamp.counselor"
                         value={hiliInternationalCamp?.Counselor}
+                        defaultChecked={hiliInternationalCamp?.Counselor}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -646,6 +663,7 @@ const EditProfile = () => {
                         placeholder="Enter Hili"
                         name="hili"
                         value={hili}
+                        defaultChecked={hili}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -658,6 +676,7 @@ const EditProfile = () => {
                         placeholder="Enter Hillel"
                         name="hillel"
                         value={hillel}
+                        defaultChecked={hillel}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -670,6 +689,7 @@ const EditProfile = () => {
                         placeholder="Enter Haftr"
                         name="haftr"
                         value={haftr}
+                        defaultChecked={haftr}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -682,6 +702,7 @@ const EditProfile = () => {
                         placeholder="Enter Parent Of Student"
                         name="parentOfStudent"
                         value={parentOfStudent}
+                        defaultChecked={parentOfStudent}
                         onChange={(e) => onChange(e, formData, setFormData)}
                         require
                       />
@@ -710,10 +731,17 @@ const EditProfile = () => {
                         type="file"
                         style={{ color: "white" }}
                         name="profilePictureURL"
-                        onChange={(e) => onFileChange(e, formData, setFormData)}
+                        onChange={(e) =>
+                          onFileChange(e, formData, setFormData, setImage)
+                        }
                       />
                     </div>
                   </div>
+                  {image && (
+                    <div>
+                      <img src={image} alt="..." width="200" height="150" />
+                    </div>
+                  )}
                   <div className="mt-5 text-center">
                     <button
                       className="btn btn-primary profile-button"

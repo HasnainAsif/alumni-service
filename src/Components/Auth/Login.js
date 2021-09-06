@@ -29,7 +29,7 @@ const Login = () => {
     await axios
       .post(serverRoutes.LOGIN, formData)
       .then((res) => {
-        setUser(res.data?.user);
+        setUser({ ...res.data?.user });
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data?.user));
         setAuthToken(res.data?.token);
@@ -37,8 +37,10 @@ const Login = () => {
         setFormData({ email: "", password: "" });
         if (res.data?.user?.admin) {
           history.push(browserRoutes.ALL_PROFILES);
-        } else {
+        } else if (res.data?.user?.alumniId) {
           history.push(browserRoutes.PROFILE_DETAIL);
+        } else {
+          history.push(browserRoutes.CREATE_PROFILES);
         }
       })
       .catch((err) => {

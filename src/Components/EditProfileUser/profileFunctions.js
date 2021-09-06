@@ -50,9 +50,10 @@ export const checkMimeType = (event) => {
   return true;
 };
 
-export const onFileChange = (event, formData, setFormData) => {
+export const onFileChange = (event, formData, setFormData, setImage) => {
   if (checkMimeType(event)) {
     setFormData({ ...formData, [event.target.name]: event.target.files[0] });
+    setImage(URL.createObjectURL(event.target.files[0]));
   }
 };
 
@@ -62,78 +63,83 @@ export const onSubmit = ({ e, formData, alumniId, history }) => {
 
   const data = new FormData();
 
-  for (const key in fData) {
-    if (["string", "boolean"].includes(typeof fData[key])) {
-      // its for string and boolean
-      data.append(`json[${key}]`, fData[key]);
-    } else if (Array.isArray(fData[key])) {
-      // its for arrays
-      const isArrayObj = fData[key].some((value) => typeof value === "object");
+  // for (const key in fData) {
+  //   if (["string", "boolean"].includes(typeof fData[key])) {
+  //     // its for string and boolean
+  //     data.append(`json[${key}]`, fData[key]);
+  //   } else if (Array.isArray(fData[key])) {
+  //     // its for arrays
+  //     const isArrayObj = fData[key].some((value) => typeof value === "object");
 
-      if (isArrayObj) {
-        // check if formData is an arrayObject
-        if (key === "siblings") {
-          fData[key].forEach((element, index) => {
-            data.append(
-              `json[${key}][firstname]`,
-              fData[key][index]["firstname"]
-            );
-            data.append(
-              `json[${key}][lastname]`,
-              fData[key][index]["lastname"]
-            );
-            data.append(
-              `json[${key}][yearCompleted]`,
-              fData[key][index]["yearCompleted"]
-            );
+  //     if (isArrayObj) {
+  //       // check if formData is an arrayObject
+  //       if (key === "siblings") {
+  //         fData[key].forEach((element, index) => {
+  //           data.append(
+  //             `json[${key}][firstname]`,
+  //             fData[key][index]["firstname"]
+  //           );
+  //           data.append(
+  //             `json[${key}][lastname]`,
+  //             fData[key][index]["lastname"]
+  //           );
+  //           data.append(
+  //             `json[${key}][yearCompleted]`,
+  //             fData[key][index]["yearCompleted"]
+  //           );
 
-            data.append(
-              `json[${key}][middleSchool][name]`,
-              fData[key][index]["middleSchool"]["name"]
-            );
-            data.append(
-              `json[${key}][middleSchool][yearStarted]`,
-              fData[key][index]["middleSchool"]["yearStarted"]
-            );
-            data.append(
-              `json[${key}][middleSchool][yearEnded]`,
-              fData[key][index]["middleSchool"]["yearEnded"]
-            );
-            data.append(
-              `json[${key}][highSchool][name]`,
-              fData[key][index]["highSchool"]["name"]
-            );
-            data.append(
-              `json[${key}][highSchool][yearStarted]`,
-              fData[key][index]["highSchool"]["yearStarted"]
-            );
-            data.append(
-              `json[${key}][highSchool][yearEnded]`,
-              fData[key][index]["highSchool"]["yearEnded"]
-            );
-          });
-        } else {
-          fData[key].forEach((element, index) => {
-            for (const nestedKey in element) {
-              data.append(
-                `json[${key}][${index}][${nestedKey}]`,
-                element[nestedKey]
-              );
-            }
-          });
-        }
-      } else {
-        // formData is a simple array
-        for (const nestedKey in fData[key]) {
-          data.append(`json[${key}]`, fData[key][nestedKey]);
-        }
-      }
-    } else {
-      // its for objects
-      for (const nestedKey in fData[key]) {
-        data.append(`json[${key}][${nestedKey}]`, fData[key][nestedKey]);
-      }
-    }
+  //           data.append(
+  //             `json[${key}][middleSchool][name]`,
+  //             fData[key][index]["middleSchool"]["name"]
+  //           );
+  //           data.append(
+  //             `json[${key}][middleSchool][yearStarted]`,
+  //             fData[key][index]["middleSchool"]["yearStarted"]
+  //           );
+  //           data.append(
+  //             `json[${key}][middleSchool][yearEnded]`,
+  //             fData[key][index]["middleSchool"]["yearEnded"]
+  //           );
+  //           data.append(
+  //             `json[${key}][highSchool][name]`,
+  //             fData[key][index]["highSchool"]["name"]
+  //           );
+  //           data.append(
+  //             `json[${key}][highSchool][yearStarted]`,
+  //             fData[key][index]["highSchool"]["yearStarted"]
+  //           );
+  //           data.append(
+  //             `json[${key}][highSchool][yearEnded]`,
+  //             fData[key][index]["highSchool"]["yearEnded"]
+  //           );
+  //         });
+  //       } else {
+  //         fData[key].forEach((element, index) => {
+  //           for (const nestedKey in element) {
+  //             data.append(
+  //               `json[${key}][${index}][${nestedKey}]`,
+  //               element[nestedKey]
+  //             );
+  //           }
+  //         });
+  //       }
+  //     } else {
+  //       // formData is a simple array
+  //       for (const nestedKey in fData[key]) {
+  //         data.append(`json[${key}]`, fData[key][nestedKey]);
+  //       }
+  //     }
+  //   } else {
+  //     // its for objects
+  //     for (const nestedKey in fData[key]) {
+  //       data.append(`json[${key}][${nestedKey}]`, fData[key][nestedKey]);
+  //     }
+  //   }
+  // }
+
+  data.append("json", JSON.stringify(fData));
+  if (formData.profilePictureURL) {
+    data.append("profilePictureURL", formData.profilePictureURL);
   }
 
   axios

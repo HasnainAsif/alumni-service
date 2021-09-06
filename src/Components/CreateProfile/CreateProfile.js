@@ -23,6 +23,7 @@ import { useHistory } from "react-router-dom";
 const CreateProfile = () => {
   const history = useHistory();
   const [formData, setFormData] = useState(defaultValues);
+  const [image, setImage] = useState();
 
   const {
     profession,
@@ -45,6 +46,8 @@ const CreateProfile = () => {
     comment,
     profilePictureURL,
   } = formData;
+
+  console.log(image);
 
   return (
     <div className="container">
@@ -676,10 +679,17 @@ const CreateProfile = () => {
                         type="file"
                         style={{ color: "white" }}
                         name="profilePictureURL"
-                        onChange={(e) => onFileChange(e, formData, setFormData)}
+                        onChange={(e) =>
+                          onFileChange(e, formData, setFormData, setImage)
+                        }
                       />
                     </div>
                   </div>
+                  {image && (
+                    <div>
+                      <img src={image} alt="..." width="200" height="150" />
+                    </div>
+                  )}
                   <div className="mt-5 text-center">
                     <button
                       className="btn btn-primary profile-button"
