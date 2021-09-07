@@ -139,7 +139,7 @@ export const onSubmit = ({ e, formData, alumniId, history }) => {
 
   data.append("json", JSON.stringify(fData));
   if (formData.profilePictureURL) {
-    data.append("profilePictureURL", formData.profilePictureURL);
+    data.append("profile", formData.profilePictureURL);
   }
 
   axios

@@ -181,7 +181,7 @@ export const onSubmit = async (e, formData, history, setUser) => {
   //   }
   // }
   data.append("json", JSON.stringify(fData));
-  data.append("profilePictureURL", formData.profilePictureURL);
+  data.append("profile", formData.profilePictureURL);
   await axios
     .post(
       "https://y0as6g37y0.execute-api.us-east-1.amazonaws.com/dev/alumni",
