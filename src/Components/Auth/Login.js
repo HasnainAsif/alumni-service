@@ -44,6 +44,7 @@ const Login = () => {
         }
       })
       .catch((err) => {
+        setUser(null);
         toast.error(
           err?.response?.data?.message || err?.message || "Something happens..."
         );

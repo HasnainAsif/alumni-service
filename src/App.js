@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import "./App.css";
 
 import AllProfiles from "./Components/AllProfiles/AllProfiles";
 import Auth from "./Components/Auth/Auth";
@@ -19,12 +20,13 @@ export const UserContext = React.createContext();
 if (localStorage.token) setAuthToken(localStorage.token);
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(undefined);
   useEffect(() => {
     axios
       .get(serverRoutes.AUTO_LOGIN)
       .then((res) => setUser(res.data.user))
       .catch((err) => {
+        setUser(null);
         console.log(err.message);
       });
   }, []);
@@ -39,9 +41,13 @@ const App = () => {
               exact
               path={browserRoutes.AUTH}
               render={(props) =>
-                !localStorage.getItem("token") ? (
+                user === undefined ? (
+                  <div className="align-loader-center">
+                    <div className="loader"></div>
+                  </div>
+                ) : !user ? (
                   <Auth {...props} />
-                ) : JSON.parse(localStorage.getItem("user"))?.admin ? (
+                ) : user?.admin ? (
                   <Redirect to={browserRoutes.ALL_PROFILES} />
                 ) : (
                   <Redirect to={browserRoutes.PROFILE_DETAIL} />
@@ -53,7 +59,11 @@ const App = () => {
               exact
               path={browserRoutes.EDIT_PROFILE}
               render={(props) =>
-                localStorage.getItem("token") ? (
+                user === undefined ? (
+                  <div className="align-loader-center">
+                    <div className="loader"></div>
+                  </div>
+                ) : user ? (
                   <EditProfileUser {...props} />
                 ) : (
                   <Redirect to={browserRoutes.AUTH} />
@@ -64,7 +74,11 @@ const App = () => {
               exact
               path={browserRoutes.PROFILE_DETAIL}
               render={(props) =>
-                localStorage.getItem("token") ? (
+                user === undefined ? (
+                  <div className="align-loader-center">
+                    <div className="loader"></div>
+                  </div>
+                ) : user ? (
                   <ProfileDetail {...props} />
                 ) : (
                   <Redirect to={browserRoutes.AUTH} />
@@ -75,8 +89,12 @@ const App = () => {
               exact
               path={browserRoutes.CREATE_PROFILES}
               render={(props) =>
-                localStorage.getItem("token") ? (
-                  !JSON.parse(localStorage.getItem("user"))?.alumniId ? (
+                user === undefined ? (
+                  <div className="align-loader-center">
+                    <div className="loader"></div>
+                  </div>
+                ) : user ? (
+                  !user?.alumniId ? (
                     <CreateProfile {...props} />
                   ) : (
                     <Redirect to={browserRoutes.PROFILE_DETAIL} />
@@ -91,7 +109,11 @@ const App = () => {
               exact
               path={browserRoutes.ALL_PROFILES}
               render={(props) =>
-                JSON.parse(localStorage.getItem("user"))?.admin ? (
+                user === undefined ? (
+                  <div className="align-loader-center">
+                    <div className="loader"></div>
+                  </div>
+                ) : user?.admin ? (
                   <AllProfiles {...props} />
                 ) : (
                   <Redirect to={browserRoutes.PROFILE_DETAIL} />

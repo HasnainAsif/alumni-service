@@ -6,8 +6,10 @@ import browserRoutes from "../../Routes/browserRoutes";
 import serverRoutes from "../../Routes/serverRoutes";
 import axios from "axios";
 // import { data } from "./data";
+import { UserContext } from "../../App";
 
 const AllProfiles = () => {
+  const [user, setUser] = React.useContext(UserContext);
   const history = useHistory();
 
   const [data, setData] = useState([]);
@@ -47,6 +49,7 @@ const AllProfiles = () => {
   const logout = (e) => {
     e.preventDefault();
     localStorage.clear();
+    setUser(null);
     history.push(browserRoutes.AUTH);
   };
 

@@ -1,13 +1,16 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import browserRoutes from "../../Routes/browserRoutes";
+import { UserContext } from "../../App";
 
 const Navbar = () => {
+  const [user, setUser] = React.useContext(UserContext);
   const history = useHistory();
 
   const logout = (e) => {
     e.preventDefault();
     localStorage.clear();
+    setUser(null);
     history.push(browserRoutes.AUTH);
   };
 

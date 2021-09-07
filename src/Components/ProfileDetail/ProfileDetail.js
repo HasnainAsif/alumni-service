@@ -8,7 +8,7 @@ import axios from "axios";
 import { UserContext } from "../../App";
 
 const ProfileDetail = ({}) => {
-  const [user] = React.useContext(UserContext);
+  const [user, setUser] = React.useContext(UserContext);
 
   const [profileData, setProfileData] = useState(defaultValues);
   const {
@@ -86,6 +86,7 @@ const ProfileDetail = ({}) => {
   const logout = (e) => {
     e.preventDefault();
     localStorage.clear();
+    setUser(null);
     history.push(browserRoutes.AUTH);
   };
 
@@ -381,8 +382,8 @@ const ProfileDetail = ({}) => {
                           </Fragment>
                         ))}
                       </ul> */}
-                      <ul className="row profile-detail">
-                        {/* <li className="col-12 col-md-6">
+                      {/* <ul className="row profile-detail">
+                        <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Attended: </span>
                           <span>
                             {hillelDayCamp?.attended ? "True" : "False"}
@@ -399,7 +400,7 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Speciality: </span>
                           <span>{hillelDayCamp?.specialty || ""}</span>
-                        </li> */}
+                        </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Camper: </span>
 
@@ -410,10 +411,6 @@ const ProfileDetail = ({}) => {
                             checked={hillelDayCamp?.camper}
                             disabled
                           />
-
-                          {/* <span>
-                            {hillelDayCamp?.camper ? "True" : "False"}
-                          </span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel Day Camp Counselor: </span>
@@ -424,13 +421,10 @@ const ProfileDetail = ({}) => {
                             checked={hillelDayCamp?.counselor}
                             disabled
                           />
-                          {/* <span>
-                            {hillelDayCamp?.counselor ? "True" : "False"}
-                          </span> */}
                         </li>
-                      </ul>
+                      </ul> */}
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Attended: </span>
                           <input
@@ -440,11 +434,9 @@ const ProfileDetail = ({}) => {
                             checked={hillelSleepCamp.attended}
                             disabled
                           />
-                          {/* <span>
-                            {hillelSleepCamp.attended ? "True" : "False"}
-                          </span> */}
+                          
                         </li>
-                        {/* <li className="col-12 col-md-6">
+                        <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Start Year: </span>
                           <span>{hillelSleepCamp?.startYear || ""}</span>
                         </li>
@@ -455,7 +447,7 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Speciality: </span>
                           <span>{hillelSleepCamp?.specialty || ""}</span>
-                        </li> */}
+                        </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Camper: </span>
                           <input
@@ -465,9 +457,7 @@ const ProfileDetail = ({}) => {
                             checked={hillelSleepCamp?.camper}
                             disabled
                           />
-                          {/* <span>
-                            {hillelSleepCamp?.camper ? "True" : "False"}
-                          </span> */}
+                          
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel Sleep Away Counselor: </span>
@@ -478,13 +468,11 @@ const ProfileDetail = ({}) => {
                             checked={hillelSleepCamp?.counselor}
                             disabled
                           />
-                          {/* <span>
-                            {hillelSleepCamp?.counselor ? "True" : "False"}
-                          </span> */}
+                          
                         </li>
-                      </ul>
+                      </ul> */}
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Attended: </span>
                           <input
@@ -494,9 +482,8 @@ const ProfileDetail = ({}) => {
                             checked={hiliDayCamp.attended}
                             disabled
                           />
-                          {/* <span>{hiliDayCamp.attended ? "True" : "False"}</span> */}
                         </li>
-                        {/* <li className="col-12 col-md-6">
+                        <li className="col-12 col-md-6">
                           <span>Hili Day Camp Start Year: </span>
                           <span>{hiliDayCamp?.startYear || ""}</span>
                         </li>
@@ -507,7 +494,7 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Speciality: </span>
                           <span>{hiliDayCamp?.specialty || ""}</span>
-                        </li> */}
+                        </li>
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Camper: </span>
                           <input
@@ -517,7 +504,6 @@ const ProfileDetail = ({}) => {
                             checked={hiliDayCamp?.camper}
                             disabled
                           />
-                          {/* <span>{hiliDayCamp?.camper ? "True" : "False"}</span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hili Day Camp Counselor: </span>
@@ -528,13 +514,10 @@ const ProfileDetail = ({}) => {
                             checked={hiliDayCamp?.counselor}
                             disabled
                           />
-                          {/* <span>
-                            {hiliDayCamp?.counselor ? "True" : "False"}
-                          </span> */}
                         </li>
-                      </ul>
+                      </ul> */}
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hili White Attended: </span>
                           <input
@@ -544,11 +527,8 @@ const ProfileDetail = ({}) => {
                             checked={hiliWhiteCamp.attended}
                             disabled
                           />
-                          {/* <span>
-                            {hiliWhiteCamp.attended ? "True" : "False"}
-                          </span> */}
                         </li>
-                        {/* <li className="col-12 col-md-6">
+                        <li className="col-12 col-md-6">
                           <span>Hili White Start Year: </span>
                           <span>{hiliWhiteCamp?.startYear || ""}</span>
                         </li>
@@ -559,7 +539,7 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hili White Speciality: </span>
                           <span>{hiliWhiteCamp?.specialty || ""}</span>
-                        </li> */}
+                        </li>
                         <li className="col-12 col-md-6">
                           <span>Hili White Camper: </span>
                           <input
@@ -569,9 +549,6 @@ const ProfileDetail = ({}) => {
                             checked={hiliWhiteCamp?.camper}
                             disabled
                           />
-                          {/* <span>
-                            {hiliWhiteCamp?.camper ? "True" : "False"}
-                          </span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hili White Counselor: </span>
@@ -582,13 +559,10 @@ const ProfileDetail = ({}) => {
                             checked={hiliWhiteCamp?.counselor}
                             disabled
                           />
-                          {/* <span>
-                            {hiliWhiteCamp?.counselor ? "True" : "False"}
-                          </span> */}
                         </li>
-                      </ul>
+                      </ul> */}
 
-                      <ul className="row profile-detail">
+                      {/* <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
                           <span>Hili International Attended: </span>
                           <input
@@ -598,11 +572,8 @@ const ProfileDetail = ({}) => {
                             checked={hiliInternationalCamp.attended}
                             disabled
                           />
-                          {/* <span>
-                            {hiliInternationalCamp.attended ? "True" : "False"}
-                          </span> */}
                         </li>
-                        {/* <li className="col-12 col-md-6">
+                        <li className="col-12 col-md-6">
                           <span>Hili International Start Year: </span>
                           <span>{hiliInternationalCamp?.startYear || ""}</span>
                         </li>
@@ -613,7 +584,7 @@ const ProfileDetail = ({}) => {
                         <li className="col-12 col-md-6">
                           <span>Hili International Speciality: </span>
                           <span>{hiliInternationalCamp?.specialty || ""}</span>
-                        </li> */}
+                        </li>
                         <li className="col-12 col-md-6">
                           <span>Hili International Camper: </span>
                           <input
@@ -623,9 +594,6 @@ const ProfileDetail = ({}) => {
                             checked={hiliInternationalCamp?.camper}
                             disabled
                           />
-                          {/* <span>
-                            {hiliInternationalCamp?.camper ? "True" : "False"}
-                          </span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hili International Counselor: </span>
@@ -636,13 +604,8 @@ const ProfileDetail = ({}) => {
                             checked={hiliInternationalCamp?.counselor}
                             disabled
                           />
-                          {/* <span>
-                            {hiliInternationalCamp?.counselor
-                              ? "True"
-                              : "False"}
-                          </span> */}
                         </li>
-                      </ul>
+                      </ul> */}
 
                       <ul className="row profile-detail">
                         <li className="col-12 col-md-6">
@@ -654,7 +617,6 @@ const ProfileDetail = ({}) => {
                             checked={hili}
                             disabled
                           />
-                          {/* <span>{hili ? "True" : "False"}</span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Hillel: </span>
@@ -665,7 +627,6 @@ const ProfileDetail = ({}) => {
                             checked={hillel}
                             disabled
                           />
-                          {/* <span>{hillel ? "True" : "False"}</span> */}
                         </li>
                         <li className="col-12 col-md-6">
                           <span>Haftr: </span>
@@ -676,9 +637,8 @@ const ProfileDetail = ({}) => {
                             checked={haftr}
                             disabled
                           />
-                          {/* <span>{haftr ? "True" : "False"}</span> */}
                         </li>
-                        <li className="col-12 col-md-6">
+                        {/* <li className="col-12 col-md-6">
                           <span>Parent of Student: </span>
                           <input
                             type="checkbox"
@@ -687,8 +647,7 @@ const ProfileDetail = ({}) => {
                             checked={parentOfStudent}
                             disabled
                           />
-                          {/* <span>{parentOfStudent ? "True" : "False"}</span> */}
-                        </li>
+                        </li> */}
                         {/* <li className="col-12 col-md-6">
                           <span>Boards: </span>
                           <span>{boards?.join(", ") || ""}</span>

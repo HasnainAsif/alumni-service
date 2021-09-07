@@ -38,7 +38,7 @@ const Register = () => {
         history.push(browserRoutes.CREATE_PROFILES);
       })
       .catch((err) => {
-        console.log(err.response);
+        setUser(null);
         toast.error(
           err?.response?.data?.message || err?.message || "Something happens..."
         );
