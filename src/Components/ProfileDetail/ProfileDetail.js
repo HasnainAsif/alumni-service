@@ -56,8 +56,6 @@ const ProfileDetail = ({}) => {
   } = profileData;
   const history = useHistory();
 
-  console.log(user);
-
   const toEditProfile = (e) => {
     e.preventDefault();
     let ROUTE = browserRoutes.EDIT_PROFILE;
