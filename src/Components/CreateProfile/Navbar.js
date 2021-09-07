@@ -29,7 +29,7 @@ const Navbar = () => {
       {/* <img style={{ width: "50%" }} src="images/logo.png" alt="..." /> */}
       <img width="200px" src="images/fake-logo.png" alt="..." />
       <div className="d-flex">
-        {JSON.parse(localStorage.getItem("user"))?.admin ? (
+        {user?.admin ? (
           <button
             // className="btn selectwalletbutton my-2 my-sm-0"
             className="nav-link"

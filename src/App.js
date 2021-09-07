@@ -17,17 +17,19 @@ import serverRoutes from "./Routes/serverRoutes";
 
 export const UserContext = React.createContext();
 
-if (localStorage.token) setAuthToken(localStorage.token);
+if (localStorage.token) setAuthToken(JSON.parse(localStorage?.token));
 
 const App = () => {
   const [user, setUser] = useState(undefined);
   useEffect(() => {
     axios
       .get(serverRoutes.AUTO_LOGIN)
-      .then((res) => setUser(res.data.user))
+      .then((res) => {
+        setUser(res.data.user);
+      })
       .catch((err) => {
         setUser(null);
-        console.log(err.message);
+        console.log(err);
       });
   }, []);
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { defaultValues } from "./formDataValues";
 import {
   onChange,
@@ -19,11 +19,13 @@ import OldAddresses from "./OldAddresses";
 import Siblings from "./Siblings";
 import Children from "./Children";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../../App";
 
 const CreateProfile = () => {
   const history = useHistory();
   const [formData, setFormData] = useState(defaultValues);
   const [image, setImage] = useState();
+  const [user, setUser] = useContext(UserContext);
 
   const {
     profession,
@@ -46,8 +48,6 @@ const CreateProfile = () => {
     comment,
     profilePictureURL,
   } = formData;
-
-  console.log(image);
 
   return (
     <div className="container">
@@ -695,7 +695,7 @@ const CreateProfile = () => {
                       className="btn btn-primary profile-button"
                       type="button"
                       // type="submit"
-                      onClick={(e) => onSubmit(e, formData, history)}
+                      onClick={(e) => onSubmit(e, formData, history, setUser)}
                     >
                       Save Profile
                     </button>

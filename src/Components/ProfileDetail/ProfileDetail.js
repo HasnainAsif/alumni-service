@@ -56,10 +56,12 @@ const ProfileDetail = ({}) => {
   } = profileData;
   const history = useHistory();
 
+  console.log(user);
+
   const toEditProfile = (e) => {
     e.preventDefault();
     let ROUTE = browserRoutes.EDIT_PROFILE;
-    if (JSON.parse(localStorage.getItem("user"))?.admin) {
+    if (user?.admin) {
       ROUTE += "?id=" + window.location?.search?.substring(4);
     }
     history.push(ROUTE);
@@ -103,7 +105,7 @@ const ProfileDetail = ({}) => {
           <img width="200px" src="images/fake-logo.png" alt="..." />
 
           <div className="d-flex">
-            {JSON.parse(localStorage.getItem("user"))?.admin ? (
+            {user?.admin ? (
               <button
                 // className="btn selectwalletbutton my-2 my-sm-0 mr-2"
                 className="nav-link mr-2"
@@ -144,8 +146,7 @@ const ProfileDetail = ({}) => {
                     Image Name
                   </span> */}
                   <div className="mt-5 text-center">
-                    {!JSON.parse(localStorage.getItem("user"))?.admin &&
-                    !JSON.parse(localStorage.getItem("user"))?.alumniId ? (
+                    {!user?.admin && !user?.alumniId ? (
                       <button
                         className="btn btn-primary profile-button"
                         type="button"

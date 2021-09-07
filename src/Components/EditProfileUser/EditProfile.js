@@ -60,16 +60,13 @@ const EditProfile = () => {
     profilePictureURL,
   } = formData;
 
-  console.log(hillelDayCamp?.attended, hili, hillel, haftr, parentOfStudent);
-  console.log(formData);
-
   const queryParams = window.location?.search?.substring(4);
   useEffect(() => {
     if (user?.alumniId || queryParams) {
       axios
         .get(`${serverRoutes.ALUMNI}/${user?.alumniId || queryParams || 0}`)
         .then((res) => {
-          setFormData(res.data);
+          setFormData({ ...res.data, profilePictureURL: "" });
           setGradschoolFields(res.data.gradSchools);
           setOldAddressesFields(res.data.oldAddresses);
           setSiblingsFields(res.data.siblings);

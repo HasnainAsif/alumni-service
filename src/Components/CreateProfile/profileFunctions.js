@@ -101,7 +101,7 @@ export const onFileChange = (event, formData, setFormData, setImage) => {
   }
 };
 
-export const onSubmit = (e, formData, history) => {
+export const onSubmit = async (e, formData, history, setUser) => {
   const fData = { ...formData };
   delete fData.profilePictureURL;
 
@@ -180,10 +180,9 @@ export const onSubmit = (e, formData, history) => {
   //     }
   //   }
   // }
-
   data.append("json", JSON.stringify(fData));
   data.append("profilePictureURL", formData.profilePictureURL);
-  axios
+  await axios
     .post(
       "https://y0as6g37y0.execute-api.us-east-1.amazonaws.com/dev/alumni",
       data
@@ -202,6 +201,16 @@ export const onSubmit = (e, formData, history) => {
       toast.success("Alumni profile created successfully");
     })
     .catch((err) => toast.error(err.message));
+
+  axios
+    .get(serverRoutes.AUTO_LOGIN)
+    .then((res) => {
+      setUser(res.data.user);
+    })
+    .catch((err) => {
+      setUser(null);
+      console.log(err);
+    });
 };
 
 // export const onSubmit = (e, formData) => {
