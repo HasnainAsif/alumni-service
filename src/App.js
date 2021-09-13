@@ -17,7 +17,7 @@ import serverRoutes from "./Routes/serverRoutes";
 
 export const UserContext = React.createContext();
 
-if (localStorage.token) setAuthToken(JSON.parse(localStorage?.token));
+if (localStorage.token) setAuthToken(localStorage?.token);
 
 const App = () => {
   const [user, setUser] = useState(undefined);
