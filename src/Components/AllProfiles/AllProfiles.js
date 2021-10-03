@@ -30,11 +30,19 @@ const AllProfiles = () => {
       render: (rowData) => (
         <button
           className="btn selectwalletbutton"
-          onClick={history.push(
-            browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id
-          )}
+          onClick={() =>
+            history.push(browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id)
+          }
         />
       ),
+    },
+  ];
+  const data1 = [
+    {
+      Firstname: "first",
+    },
+    {
+      Firstname: "second",
     },
   ];
 
@@ -85,31 +93,29 @@ const AllProfiles = () => {
               <MaterialTable
                 icons={tableIcons}
                 columns={columns}
-                data={data}
+                data={data1}
                 title="All Profiles"
-                actions={[
-                  {
-                    icon: "explore",
-                    tooltip: "Explore Alumni",
-                    onClick: (event, rowData) => {
-                      history.push(
-                        browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id
-                      );
-                    },
-                  },
-                ]}
-                components={{
-                  Action: (props) => (
-                    <button
-                      className="btn btn-blue text-center"
-                      onClick={(event) =>
-                        props.action.onClick(event, props.data)
-                      }
-                    >
-                      My Button
-                    </button>
-                  ),
-                }}
+                // actions={[
+                //   {
+                //     icon: "explore",
+                //     tooltip: "Explore Alumni",
+                //     onClick: (event, rowData) => {
+                //       history.push(browserRoutes.PROFILE_DETAIL + "?id=" + 1);
+                //     },
+                //   },
+                // ]}
+                // components={{
+                //   Action: (props) => (
+                //     <button
+                //       className="btn btn-blue text-center"
+                //       onClick={(event) =>
+                //         props.action.onClick(event, props.data)
+                //       }
+                //     >
+                //       My Button
+                //     </button>
+                //   ),
+                // }}
                 options={{
                   actionsColumnIndex: -1,
                 }}
