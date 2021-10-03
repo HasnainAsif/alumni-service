@@ -37,14 +37,6 @@ const AllProfiles = () => {
       ),
     },
   ];
-  const data1 = [
-    {
-      Firstname: "first",
-    },
-    {
-      Firstname: "second",
-    },
-  ];
 
   useEffect(() => {
     axios
@@ -93,7 +85,7 @@ const AllProfiles = () => {
               <MaterialTable
                 icons={tableIcons}
                 columns={columns}
-                data={data1}
+                data={data}
                 title="All Profiles"
                 // actions={[
                 //   {
