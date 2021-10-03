@@ -7,6 +7,7 @@ import serverRoutes from "../../Routes/serverRoutes";
 import axios from "axios";
 // import { data } from "./data";
 import { UserContext } from "../../App";
+import setAuthToken from "../../utils/setAuthToken";
 
 const AllProfiles = () => {
   const [user, setUser] = React.useContext(UserContext);
@@ -97,6 +98,18 @@ const AllProfiles = () => {
                     },
                   },
                 ]}
+                components={{
+                  Action: (props) => (
+                    <button
+                      className="btn btn-blue text-center"
+                      onClick={(event) =>
+                        props.action.onClick(event, props.data)
+                      }
+                    >
+                      My Button
+                    </button>
+                  ),
+                }}
                 options={{
                   actionsColumnIndex: -1,
                 }}

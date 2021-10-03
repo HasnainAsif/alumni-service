@@ -753,6 +753,7 @@ const EditProfile = () => {
                           formData,
                           alumniId: user?.alumniId || queryParams,
                           history,
+                          user,
                         })
                       }
                     >

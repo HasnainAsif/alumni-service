@@ -57,7 +57,7 @@ export const onFileChange = (event, formData, setFormData, setImage) => {
   }
 };
 
-export const onSubmit = ({ e, formData, alumniId, history }) => {
+export const onSubmit = ({ e, formData, alumniId, history, user }) => {
   const fData = { ...formData };
   delete fData.profilePictureURL;
 
@@ -146,11 +146,13 @@ export const onSubmit = ({ e, formData, alumniId, history }) => {
     .patch(`${serverRoutes.ALUMNI}/${alumniId}`, data)
     .then((res) => {
       let ROUTE = "";
-      if (JSON.parse(localStorage.getItem("user"))?.admin) {
-        ROUTE = browserRoutes.PROFILE_DETAIL + "/id=" + res.data?.id;
+
+      if (user?.admin) {
+        ROUTE = browserRoutes.PROFILE_DETAIL + "?id=" + res.data?.id;
       } else {
         ROUTE = browserRoutes.PROFILE_DETAIL;
       }
+
       history.push(ROUTE);
       toast.success("Profile updated successfully");
     })
