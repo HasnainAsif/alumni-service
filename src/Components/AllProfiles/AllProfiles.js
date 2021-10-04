@@ -26,14 +26,16 @@ const AllProfiles = () => {
     { title: "Emailaddress", field: "emailAddress" },
     {
       field: "id",
-      title: "Explore",
+      // title: "Explore",
       render: (rowData) => (
         <button
-          className="btn selectwalletbutton"
+          className="btn btn-sm selectwalletbutton"
           onClick={() =>
             history.push(browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id)
           }
-        />
+        >
+          Explore
+        </button>
       ),
     },
   ];
