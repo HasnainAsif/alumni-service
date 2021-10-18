@@ -60,6 +60,8 @@ const EditProfile = () => {
     profilePictureURL,
   } = formData;
 
+  console.log(birthday);
+
   const queryParams = window.location?.search?.substring(4);
   useEffect(() => {
     if (user?.alumniId || queryParams) {

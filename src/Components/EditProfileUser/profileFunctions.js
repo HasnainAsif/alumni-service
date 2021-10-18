@@ -5,7 +5,7 @@ import browserRoutes from "../../Routes/browserRoutes";
 
 export const onChange = (e, formData, setFormData) => {
   let value;
-  if (["text", "email"].includes(e.target.type)) {
+  if (["text", "email", "date"].includes(e.target.type)) {
     value = e.target.value;
   } else if (e.target.type === "checkbox") {
     value = e.target.checked;
