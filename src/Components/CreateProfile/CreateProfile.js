@@ -111,7 +111,7 @@ const CreateProfile = () => {
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">Birthday</label>
                       <input
-                        type="text"
+                        type="date"
                         className="form-control"
                         placeholder="Enter Birthday"
                         name="birthday"
@@ -662,17 +662,19 @@ const CreateProfile = () => {
                     className="row mt-3 pt-2"
                     style={{ borderTop: "1px solid #fff" }}
                   >
-                    {/* <div className="col-md-4 col-sm-6">
-                      <label className="labels">Comment</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter comment"
-                        name="comment"
-                        value={comment}
-                        onChange={(e) => onChange(e, formData, setFormData)}
-                      />
-                    </div> */}
+                    {user?.admin !== undefined && user?.admin && (
+                      <div className="col-md-4 col-sm-6">
+                        <label className="labels">Comment</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Enter comment"
+                          name="comment"
+                          value={comment}
+                          onChange={(e) => onChange(e, formData, setFormData)}
+                        />
+                      </div>
+                    )}
                     <div className="col-md-4 col-sm-6">
                       <label className="labels">Upload profile Picture</label>
                       <input

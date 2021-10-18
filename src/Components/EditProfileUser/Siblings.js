@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 // import { onChangeArrayType } from "./profileFunctions";
 
 const Siblings = ({ formData, setFormData, siblingsFields }) => {
@@ -6,6 +6,8 @@ const Siblings = ({ formData, setFormData, siblingsFields }) => {
 
   const [countFields, setCountFields] = useState([{ count: 0 }]);
   const [lastCount, setLastCount] = useState(0);
+
+  const prevSiblings = useRef();
 
   const onAdd = (e) => {
     e.preventDefault();
@@ -99,15 +101,31 @@ const Siblings = ({ formData, setFormData, siblingsFields }) => {
     });
   };
 
+  // useEffect(() => {
+  //   if (formData.siblings.length > 0) {
+  //     for (const key in formData.siblings) {
+  //       if (key !== "0") {
+  //         setCountFields([...countFields, { count: +key }]); // converting key (string) into number
+  //         setLastCount(+key);
+  //       }
+  //     }
+  //   }
+  // }, [siblingsFields]);
+
   useEffect(() => {
-    if (formData.siblings.length > 0) {
-      for (const key in formData.siblings) {
-        if (key !== "0") {
-          setCountFields([...countFields, { count: +key }]); // converting key (string) into number
-          setLastCount(+key);
+    if (
+      siblingsFields.length > 0 &&
+      siblingsFields?.length !== prevSiblings?.current?.length
+    ) {
+      for (const key in siblingsFields) {
+        if (key != "0") {
+          // because initial value is already set on default
+          setCountFields((prev) => [...prev, { count: +key }]); // converting key (string) into number
+          setLastCount((prev) => prev + 1);
         }
       }
     }
+    prevSiblings.current = siblingsFields;
   }, [siblingsFields]);
 
   return (

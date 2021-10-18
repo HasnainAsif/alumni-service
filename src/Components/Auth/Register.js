@@ -29,10 +29,10 @@ const Register = () => {
     await axios
       .post(serverRoutes.USERS, formData)
       .then((res) => {
+        setAuthToken(res.data?.token);
         setUser({ ...res.data?.user });
         localStorage.setItem("token", JSON.stringify(res.data?.token));
         localStorage.setItem("user", JSON.stringify(res.data?.user));
-        setAuthToken(res.data?.token);
         toast.success("Registered Successfully");
         setFormData({ email: "", password: "" });
         history.push(browserRoutes.CREATE_PROFILES);
@@ -40,7 +40,7 @@ const Register = () => {
       .catch((err) => {
         setUser(null);
         toast.error(
-          err?.response?.data?.message || err?.message || "Something happens..."
+          err.response?.data?.message || err?.message || "Something happens..."
         );
       });
     setLoading(false);
@@ -53,7 +53,7 @@ const Register = () => {
         </div>
         <div className="row px-3 mb-4">
           <div className="line"></div>
-          <small className="or text-center"></small>
+          {/* <small className="or text-center"></small> */}
           <div className="line"></div>
         </div>
         <form onSubmit={onSubmit}>

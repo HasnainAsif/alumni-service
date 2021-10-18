@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 // import { onChangeArrayType } from "./profileFunctions";
 
 const OldAddresses = ({ formData, setFormData, oldAddressesFields }) => {
@@ -6,6 +6,8 @@ const OldAddresses = ({ formData, setFormData, oldAddressesFields }) => {
 
   const [countFields, setCountFields] = useState([{ count: 0 }]);
   const [lastCount, setLastCount] = useState(0);
+
+  const prevOldAddresses = useRef();
 
   const onAdd = (e) => {
     e.preventDefault();
@@ -56,15 +58,31 @@ const OldAddresses = ({ formData, setFormData, oldAddressesFields }) => {
     });
   };
 
+  // useEffect(() => {
+  //   if (formData.oldAddresses.length > 0) {
+  //     for (const key in formData.oldAddresses) {
+  //       if (key !== "0") {
+  //         setCountFields([...countFields, { count: +key }]); // converting key (string) into number
+  //         setLastCount(+key);
+  //       }
+  //     }
+  //   }
+  // }, [oldAddressesFields]);
+
   useEffect(() => {
-    if (formData.oldAddresses.length > 0) {
-      for (const key in formData.oldAddresses) {
-        if (key !== "0") {
-          setCountFields([...countFields, { count: +key }]); // converting key (string) into number
-          setLastCount(+key);
+    if (
+      oldAddressesFields.length > 0 &&
+      oldAddressesFields?.length !== prevOldAddresses?.current?.length
+    ) {
+      for (const key in oldAddressesFields) {
+        if (key != "0") {
+          // because initial value is already set on default
+          setCountFields((prev) => [...prev, { count: +key }]); // converting key (string) into number
+          setLastCount((prev) => prev + 1);
         }
       }
     }
+    prevOldAddresses.current = oldAddressesFields;
   }, [oldAddressesFields]);
 
   return (

@@ -33,7 +33,7 @@ const Navbar = () => {
         {user?.admin ? (
           <button
             // className="btn selectwalletbutton my-2 my-sm-0"
-            className="nav-link"
+            className="nav-link mr-2"
             onClick={toAdminCenter}
           >
             Admin Center

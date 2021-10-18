@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 // import { onChangeArrayType } from "./profileFunctions";
 
 const GradSchools = ({ formData, setFormData, gradschoolFields }) => {
@@ -6,6 +6,8 @@ const GradSchools = ({ formData, setFormData, gradschoolFields }) => {
 
   const [countFields, setCountFields] = useState([{ count: 0 }]);
   const [lastCount, setLastCount] = useState(0);
+
+  const prevGradSchools = useRef();
 
   const onAdd = (e) => {
     e.preventDefault();
@@ -49,15 +51,31 @@ const GradSchools = ({ formData, setFormData, gradschoolFields }) => {
     });
   };
 
+  // useEffect(() => {
+  //   if (formData.gradSchools.length > 0) {
+  //     for (const key in formData.gradSchools) {
+  //       if (key !== "0") {
+  //         setCountFields([...countFields, { count: +key }]); // converting key (string) into number
+  //         setLastCount(+key);
+  //       }
+  //     }
+  //   }
+  // }, [gradschoolFields]);
+
   useEffect(() => {
-    if (formData.gradSchools.length > 0) {
-      for (const key in formData.gradSchools) {
-        if (key !== "0") {
-          setCountFields([...countFields, { count: +key }]); // converting key (string) into number
-          setLastCount(+key);
+    if (
+      gradschoolFields.length > 0 &&
+      gradschoolFields?.length !== prevGradSchools?.current?.length
+    ) {
+      for (const key in gradschoolFields) {
+        if (key != "0") {
+          // because initial value is already set on default
+          setCountFields((prev) => [...prev, { count: +key }]); // converting key (string) into number
+          setLastCount((prev) => prev + 1);
         }
       }
     }
+    prevGradSchools.current = gradschoolFields;
   }, [gradschoolFields]);
 
   return (

@@ -29,10 +29,10 @@ const Login = () => {
     await axios
       .post(serverRoutes.LOGIN, formData)
       .then((res) => {
+        setAuthToken(res.data?.token);
         setUser({ ...res.data?.user });
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data?.user));
-        setAuthToken(res.data?.token);
         toast.success("Login Successfully");
         setFormData({ email: "", password: "" });
         if (res.data?.user?.admin) {

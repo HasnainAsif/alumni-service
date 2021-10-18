@@ -64,7 +64,7 @@ export const defaultValues = {
     },
   ],
   hillelDayCamp: {
-    attended: true,
+    attended: false,
     startYear: "",
     endYear: "",
     specialty: "",

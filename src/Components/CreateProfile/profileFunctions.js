@@ -190,7 +190,7 @@ export const onSubmit = async (e, formData, history, setUser) => {
     .then((res) => {
       let ROUTE = "";
       if (JSON.parse(localStorage.getItem("user"))?.admin) {
-        ROUTE = browserRoutes.PROFILE_DETAIL + "/id=" + res.data?.id;
+        ROUTE = browserRoutes.PROFILE_DETAIL + "?id=" + res.data?.id;
       } else {
         ROUTE = browserRoutes.PROFILE_DETAIL;
         const user = JSON.parse(localStorage.getItem("user"));
