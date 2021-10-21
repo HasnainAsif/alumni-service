@@ -73,25 +73,29 @@ const ProfileDetail = ({}) => {
 
   const goPublic = (e, alumniId) => {
     e.preventDefault();
+
+    const queryParams = window.location?.search?.substring(4);
     axios
-      .patch(`${serverRoutes.ALUMNI}/${alumniId}/gopublic`)
+      .patch(`${serverRoutes.ALUMNI}/${alumniId || queryParams}/gopublic`)
       .then((res) => {
         setProfileData(res.data);
 
         toast.success(
-          "Congrats. Your profile is now public and others can view your contact details"
+          "Congrats. This profile is now public and others can view your contact details"
         );
       })
       .catch((err) => {
-        toast.error("Error making your profile public");
+        toast.error("Error making this profile public");
         console.log(err);
       });
   };
 
   const goPrivate = (e, alumniId) => {
     e.preventDefault();
+
+    const queryParams = window.location?.search?.substring(4);
     axios
-      .patch(`${serverRoutes.ALUMNI}/${alumniId}/goprivate`)
+      .patch(`${serverRoutes.ALUMNI}/${alumniId || queryParams}/goprivate`)
       .then((res) => {
         setProfileData(res.data);
 
