@@ -6,6 +6,7 @@ import serverRoutes from "../../Routes/serverRoutes";
 import axios from "axios";
 
 import { UserContext } from "../../App";
+import { toast } from "react-toastify";
 
 const ProfileDetail = ({}) => {
   const [user, setUser] = React.useContext(UserContext);
@@ -52,6 +53,7 @@ const ProfileDetail = ({}) => {
     children,
     comment,
     id,
+    isPublic,
     profilePictureURL,
   } = profileData;
   const history = useHistory();
@@ -67,6 +69,38 @@ const ProfileDetail = ({}) => {
   const toCreateProfile = (e) => {
     e.preventDefault();
     history.push(browserRoutes.CREATE_PROFILES);
+  };
+
+  const goPublic = (e, alumniId) => {
+    e.preventDefault();
+    axios
+      .patch(`${serverRoutes.ALUMNI}/${alumniId}/gopublic`)
+      .then((res) => {
+        setProfileData(res.data);
+
+        toast.success(
+          "Congrats. Your profile is now public and others can view your contact details"
+        );
+      })
+      .catch((err) => {
+        toast.error("Error making your profile public");
+        console.log(err);
+      });
+  };
+
+  const goPrivate = (e, alumniId) => {
+    e.preventDefault();
+    axios
+      .patch(`${serverRoutes.ALUMNI}/${alumniId}/goprivate`)
+      .then((res) => {
+        setProfileData(res.data);
+
+        toast.success("Your profile is now private");
+      })
+      .catch((err) => {
+        toast.error("Error making your profile private");
+        console.log(err);
+      });
   };
 
   const queryParams = window.location?.search?.substring(4);
@@ -159,6 +193,25 @@ const ProfileDetail = ({}) => {
                         onClick={toEditProfile}
                       >
                         Edit Profile
+                      </button>
+                    )}
+                  </div>
+                  <div className="mt-5 text-center">
+                    {!isPublic ? (
+                      <button
+                        className="btn btn-primary profile-button"
+                        type="button"
+                        onClick={(e) => goPublic(e, user?.alumniId)}
+                      >
+                        Go Public
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-primary profile-button"
+                        type="button"
+                        onClick={(e) => goPrivate(e, user?.alumniId)}
+                      >
+                        Go Private
                       </button>
                     )}
                   </div>
