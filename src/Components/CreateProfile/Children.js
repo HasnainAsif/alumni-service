@@ -15,11 +15,11 @@ const Children = ({ formData, setFormData }) => {
       ...formData,
       children: [
         ...children,
-        {
-          firstname: "",
-          lastname: "",
-          graduationYear: "",
-        },
+        // {
+        //   firstname: "",
+        //   lastname: "",
+        //   graduationYear: "",
+        // },
       ],
     });
     setLastCount(lastFieldCount + 1);
@@ -37,13 +37,13 @@ const Children = ({ formData, setFormData }) => {
     setLastCount(lastFieldCount);
   };
 
-  const onChangeArrayType = (e) => {
+  const onChangeArrayType = (e, rowCount) => {
     let value = e.target.value;
     let newValue = [];
 
     newValue = children;
-    newValue[lastCount] = {
-      ...children[lastCount],
+    newValue[rowCount] = {
+      ...children[rowCount],
       [e.target.name]: value,
     };
 
@@ -52,6 +52,7 @@ const Children = ({ formData, setFormData }) => {
       children: [...newValue],
     });
   };
+  console.log(children);
 
   return (
     <div className="row mt-3 pt-2" style={{ borderTop: "1px solid #fff" }}>
@@ -65,8 +66,8 @@ const Children = ({ formData, setFormData }) => {
               placeholder="Enter Child's First Name"
               name="firstname"
               value={children?.firstname}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -77,8 +78,8 @@ const Children = ({ formData, setFormData }) => {
               placeholder="Enter Child's Last Name"
               name="lastname"
               value={children?.lastname}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -89,8 +90,8 @@ const Children = ({ formData, setFormData }) => {
               placeholder="Enter Child's Graduation Year"
               name="graduationYear"
               value={children?.graduationYear}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           {item.count === lastCount && (

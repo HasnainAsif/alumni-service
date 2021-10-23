@@ -15,21 +15,21 @@ const Siblings = ({ formData, setFormData }) => {
       ...formData,
       siblings: [
         ...siblings,
-        {
-          firstname: "",
-          lastname: "",
-          yearCompleted: "",
-          middleSchool: {
-            name: "",
-            yearStarted: "",
-            yearEnded: "",
-          },
-          highSchool: {
-            name: "",
-            yearStarted: "",
-            yearEnded: "",
-          },
-        },
+        // {
+        //   firstname: "",
+        //   lastname: "",
+        //   yearCompleted: "",
+        //   middleSchool: {
+        //     name: "",
+        //     yearStarted: "",
+        //     yearEnded: "",
+        //   },
+        //   highSchool: {
+        //     name: "",
+        //     yearStarted: "",
+        //     yearEnded: "",
+        //   },
+        // },
       ],
     });
     setLastCount(lastFieldCount + 1);
@@ -80,15 +80,15 @@ const Siblings = ({ formData, setFormData }) => {
       siblings: [...newValue],
     });
   };
-  const onChangeHighschool = (e) => {
+  const onChangeHighschool = (e, rowCount) => {
     let value = e.target.value;
     let newValue = [];
 
     newValue = siblings;
-    newValue[lastCount] = {
-      ...siblings[lastCount],
+    newValue[rowCount] = {
+      ...siblings[rowCount],
       highSchool: {
-        ...siblings[lastCount].highSchool,
+        ...siblings[rowCount].highSchool,
         [e.target.name]: value,
       },
     };
@@ -111,8 +111,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Sibling's First Name"
               name="firstname"
               value={siblings?.firstname}
-              onChange={(e) => onChange(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChange(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -123,8 +123,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Sibling's Last Name"
               name="lastname"
               value={siblings?.lastname}
-              onChange={(e) => onChange(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChange(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -135,8 +135,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Sibling's Year Completed"
               name="yearCompleted"
               value={siblings?.yearCompleted}
-              onChange={(e) => onChange(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChange(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -147,8 +147,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Sibling's Middle School Name"
               name="name"
               value={siblings?.middleSchool?.name}
-              onChange={(e) => onChangeMiddleschool(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeMiddleschool(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -161,8 +161,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Sibling's Middle School Year Started"
               name="yearStarted"
               value={siblings?.middleSchool?.yearStarted}
-              onChange={(e) => onChangeMiddleschool(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeMiddleschool(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -173,8 +173,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Siblings Middle School Year Ended"
               name="yearEnded"
               value={siblings?.middleSchool?.yearEnded}
-              onChange={(e) => onChangeMiddleschool(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeMiddleschool(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -185,8 +185,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Sibling's High School Name"
               name="name"
               value={siblings?.highSchool?.name}
-              onChange={(e) => onChangeHighschool(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeHighschool(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -197,8 +197,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Siblings High School YearStarted"
               name="yearStarted"
               value={siblings?.highSchool?.yearStarted}
-              onChange={(e) => onChangeHighschool(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeHighschool(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -209,8 +209,8 @@ const Siblings = ({ formData, setFormData }) => {
               placeholder="Enter Siblings High School YearEnded"
               name="yearEnded"
               value={siblings?.highSchool?.yearEnded}
-              onChange={(e) => onChangeHighschool(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeHighschool(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           {item.count === lastCount && (

@@ -15,7 +15,7 @@ const GradSchools = ({ formData, setFormData }) => {
       ...formData,
       gradSchools: [
         ...gradSchools,
-        { name: "", yearStarted: "", yearEnded: "" },
+        // { name: "", yearStarted: "", yearEnded: "" },
       ],
     });
     setLastCount(lastGradFieldCount + 1);
@@ -33,13 +33,13 @@ const GradSchools = ({ formData, setFormData }) => {
     setLastCount(lastGradFieldCount);
   };
 
-  const onChangeArrayType = (e) => {
+  const onChangeArrayType = (e, rowCount) => {
     let value = e.target.value;
     let newValue = [];
 
     newValue = gradSchools;
-    newValue[lastCount] = {
-      ...gradSchools[lastCount],
+    newValue[rowCount] = {
+      ...gradSchools[rowCount],
       [e.target.name]: value,
     };
 
@@ -61,8 +61,8 @@ const GradSchools = ({ formData, setFormData }) => {
               placeholder="Enter Grad School Name"
               name="name"
               value={gradSchools?.name}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -73,8 +73,8 @@ const GradSchools = ({ formData, setFormData }) => {
               placeholder="Enter Grad Schools Year Started"
               name="yearStarted"
               value={gradSchools?.yearStarted}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -85,8 +85,8 @@ const GradSchools = ({ formData, setFormData }) => {
               placeholder="Enter Grad School Year Ended"
               name="yearEnded"
               value={gradSchools?.yearEnded}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           {item.count === lastCount && (

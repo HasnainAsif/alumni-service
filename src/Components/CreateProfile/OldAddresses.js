@@ -15,14 +15,14 @@ const OldAddresses = ({ formData, setFormData }) => {
       ...formData,
       oldAddresses: [
         ...oldAddresses,
-        {
-          line1: "",
-          line2: "",
-          city: "",
-          state: "",
-          zip: "",
-          country: "",
-        },
+        // {
+        //   line1: "",
+        //   line2: "",
+        //   city: "",
+        //   state: "",
+        //   zip: "",
+        //   country: "",
+        // },
       ],
     });
     setLastCount(lastFieldCount + 1);
@@ -40,13 +40,13 @@ const OldAddresses = ({ formData, setFormData }) => {
     setLastCount(lastFieldCount);
   };
 
-  const onChangeArrayType = (e) => {
+  const onChangeArrayType = (e, rowCount) => {
     let value = e.target.value;
     let newValue = [];
 
     newValue = oldAddresses;
-    newValue[lastCount] = {
-      ...oldAddresses[lastCount],
+    newValue[rowCount] = {
+      ...oldAddresses[rowCount],
       [e.target.name]: value,
     };
 
@@ -68,8 +68,8 @@ const OldAddresses = ({ formData, setFormData }) => {
               placeholder="Enter Previous Addresses Line1"
               name="line1"
               value={oldAddresses?.line1}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -80,8 +80,8 @@ const OldAddresses = ({ formData, setFormData }) => {
               placeholder="Enter Previous Addresses Line2"
               name="line2"
               value={oldAddresses?.line2}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className={`col-md-4 col-sm-6 ${item.count !== 0 && " mt-4"}`}>
@@ -92,8 +92,8 @@ const OldAddresses = ({ formData, setFormData }) => {
               placeholder="Enter Previous Addresses City"
               name="city"
               value={oldAddresses?.city}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -104,8 +104,8 @@ const OldAddresses = ({ formData, setFormData }) => {
               placeholder="Enter Previous Addresses State"
               name="state"
               value={oldAddresses?.state}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -116,8 +116,8 @@ const OldAddresses = ({ formData, setFormData }) => {
               placeholder="Enter Previous Addresses Zip"
               name="zip"
               value={oldAddresses?.zip}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           <div className="col-md-4 col-sm-6">
@@ -128,8 +128,8 @@ const OldAddresses = ({ formData, setFormData }) => {
               placeholder="Enter Previous Addresses Country"
               name="country"
               value={oldAddresses?.country}
-              onChange={(e) => onChangeArrayType(e, formData, setFormData)}
-              disabled={item.count !== lastCount}
+              onChange={(e) => onChangeArrayType(e, item.count)}
+              // disabled={item.count !== lastCount}
             />
           </div>
           {item.count === lastCount && (
