@@ -718,16 +718,25 @@ const EditProfile = () => {
                     style={{ borderTop: "1px solid #fff" }}
                   >
                     {user?.admin !== undefined && user?.admin && (
-                      <div className="col-md-4 col-sm-6">
+                      <div className="col-md-12 col-sm-12">
                         <label className="labels">comment</label>
-                        <input
+                        {/* <input
                           type="text"
                           className="form-control"
                           placeholder="Enter comment"
                           name="comment"
                           value={comment}
                           onChange={(e) => onChange(e, formData, setFormData)}
-                        />
+                        /> */}
+                        <textarea
+                          className="form-control"
+                          placeholder="Enter comment"
+                          name="comment"
+                          // value={comment}
+                          onChange={(e) => onChange(e, formData, setFormData)}
+                        >
+                          {comment}
+                        </textarea>
                       </div>
                     )}
                     <div className="col-md-4 col-sm-6">
