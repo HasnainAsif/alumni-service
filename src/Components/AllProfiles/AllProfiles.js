@@ -20,10 +20,27 @@ const AllProfiles = () => {
   };
 
   const columns = [
-    { title: "Firstname", field: "firstname" },
-    { title: "Lastname", field: "lastname" },
-    { title: "Cellphone", field: "cellPhone" },
-    { title: "Emailaddress", field: "emailAddress" },
+    {
+      title: "Profile Picture",
+      field: "profilePictureURL",
+      render: (rowdata) => (
+        <img
+          src={rowdata.profilePictureURL || "images/profile-img.png"}
+          alt=""
+          style={{
+            width: "50px",
+            height: "50px",
+            objectFit: "cover",
+            borderRadius: "50%",
+          }}
+        />
+      ),
+    },
+    { title: "First Name", field: "firstname" },
+    { title: "Last Name", field: "lastname" },
+    { title: "Cell Phone", field: "cellPhone" },
+    { title: "Email Address", field: "emailAddress" },
+    { title: "Class Of", field: "highSchoolGradYear" },
     {
       field: "id",
       // title: "Explore",
@@ -44,7 +61,7 @@ const AllProfiles = () => {
     axios
       .get(serverRoutes.ALUMNI)
       .then((res) => {
-        setData(res.data);
+        setData(res.data.alumni);
       })
       .catch((err) => console.log(err.message));
   }, []);

@@ -175,7 +175,12 @@ const ProfileDetail = ({}) => {
                         ? profilePictureURL
                         : "images/profile-img.png"
                     }
-                    width="200px"
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                    }}
                     alt="..."
                   />
                   {/* <span className="font-weight-bold" style={{ color: "#fff" }}>
