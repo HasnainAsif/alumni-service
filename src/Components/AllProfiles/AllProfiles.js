@@ -105,7 +105,7 @@ const AllProfiles = () => {
                 icons={tableIcons}
                 columns={columns}
                 data={data}
-                title="All Profiles"
+                title="All Alumni"
                 // actions={[
                 //   {
                 //     icon: "explore",

@@ -81,7 +81,7 @@ const ProfileDetail = ({}) => {
         setProfileData(res.data);
 
         toast.success(
-          "Congrats. This profile is now public and others can view your contact details"
+          "Congrats. This profile is now public and others can view your contact details and profile picture"
         );
       })
       .catch((err) => {
@@ -99,7 +99,9 @@ const ProfileDetail = ({}) => {
       .then((res) => {
         setProfileData(res.data);
 
-        toast.success("Your profile is now private");
+        toast.success(
+          "Your profile is now private. No one can view your contact details or profile picture"
+        );
       })
       .catch((err) => {
         toast.error("Error making your profile private");
