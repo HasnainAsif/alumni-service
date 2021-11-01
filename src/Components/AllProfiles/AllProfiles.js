@@ -8,12 +8,60 @@ import axios from "axios";
 // import { data } from "./data";
 import { UserContext } from "../../App";
 import setAuthToken from "../../utils/setAuthToken";
+import AllProfilesItem from "./AllProfilesItem";
+import Pagination from "@material-ui/lab/Pagination";
 
 const AllProfiles = () => {
   const [user, setUser] = React.useContext(UserContext);
   const history = useHistory();
+  const RECORD_PER_PAGE = 10;
+
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
 
   const [data, setData] = useState([]);
+  const [countData, setCountData] = useState(60);
+
+  //screen No. e.g; 1 or 2 or 3 etc
+  const [screen, setScreen] = useState(1);
+  //Total No Of Screens
+  const [count, setCount] = useState(0);
+  //No. of Items Per Screen
+
+  const handleChange = (event, value) => {
+    setScreen(value);
+    axios
+      .get(
+        `${serverRoutes.ALUMNI}?page=${value}&limit=${RECORD_PER_PAGE}&firstname=${firstname}&lastname=${lastname}`
+      )
+      .then((res) => {
+        setData([...res.data.alumni]);
+      })
+      .catch((err) => console.log(err.message));
+  };
+  // const countData = data && data.length;
+
+  const onChangeFirstname = (e) => {
+    setFirstname(e.target.value);
+  };
+  const onClickSearch = (e) => {
+    e.preventDefault();
+    axios
+      .get(
+        `${
+          serverRoutes.ALUMNI
+        }?page=${1}&limit=${RECORD_PER_PAGE}&firstname=${firstname}&lastname=${lastname}`
+      )
+      .then((res) => {
+        setData([...res.data.alumni]);
+        setCountData(res.data.pageInfo?.lastPage * RECORD_PER_PAGE);
+      })
+      .catch((err) => console.log(err.message));
+  };
+
+  const onChangeLastname = (e) => {
+    setLastname(e.target.value);
+  };
 
   const createNewProfile = () => {
     history.push(browserRoutes.CREATE_PROFILES);
@@ -57,11 +105,21 @@ const AllProfiles = () => {
     },
   ];
 
+  //noOfScreens
+  useEffect(() => {
+    if (countData % RECORD_PER_PAGE === 0) {
+      setCount(Math.floor(countData / RECORD_PER_PAGE));
+    } else {
+      setCount(Math.floor(countData / RECORD_PER_PAGE) + 1);
+    }
+  }, [countData]);
+
   useEffect(() => {
     axios
-      .get(serverRoutes.ALUMNI)
+      .get(`${serverRoutes.ALUMNI}?page=${screen}&limit=${RECORD_PER_PAGE}`)
       .then((res) => {
         setData(res.data.alumni);
+        setCountData(res.data.pageInfo?.lastPage * RECORD_PER_PAGE);
       })
       .catch((err) => console.log(err.message));
   }, []);
@@ -106,31 +164,98 @@ const AllProfiles = () => {
                 columns={columns}
                 data={data}
                 title="All Alumni"
-                // actions={[
-                //   {
-                //     icon: "explore",
-                //     tooltip: "Explore Alumni",
-                //     onClick: (event, rowData) => {
-                //       history.push(browserRoutes.PROFILE_DETAIL + "?id=" + 1);
-                //     },
-                //   },
-                // ]}
-                // components={{
-                //   Action: (props) => (
-                //     <button
-                //       className="btn btn-blue text-center"
-                //       onClick={(event) =>
-                //         props.action.onClick(event, props.data)
-                //       }
-                //     >
-                //       My Button
-                //     </button>
-                //   ),
-                // }}
                 options={{
                   actionsColumnIndex: -1,
                 }}
               />
+              <div className="card">
+                <div className="card-header">All Alumni</div>
+                <div className="card-body">
+                  <div className="d-flex justify-content-end">
+                    <div
+                      className="input-group rounded mr-2"
+                      style={{ width: "250px" }}
+                    >
+                      <input
+                        type="search"
+                        className="form-control rounded"
+                        placeholder="Search Firstname"
+                        value={firstname}
+                        onChange={onChangeFirstname}
+                        aria-label="Search"
+                        aria-describedby="search-addon"
+                      />
+                      <span
+                        className="input-group-text border-0 search-name"
+                        id="search-addon"
+                        onClick={onClickSearch}
+                      >
+                        <i className="fas fa-search"></i>
+                      </span>
+                    </div>
+                    <div
+                      className="input-group rounded"
+                      style={{ width: "250px" }}
+                    >
+                      <input
+                        type="search"
+                        className="form-control rounded"
+                        placeholder="Search Lastname"
+                        value={lastname}
+                        onChange={onChangeLastname}
+                        aria-label="Search"
+                        aria-describedby="search-addon"
+                      />
+                      <span
+                        className="input-group-text border-0 search-name"
+                        id="search-addon"
+                        onClick={onClickSearch}
+                      >
+                        <i className="fas fa-search"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="table-responsive">
+                    <table
+                      className="table"
+                      style={{ backgroundColor: "#fff" }}
+                    >
+                      <thead>
+                        <tr>
+                          <th scope="col">Profile Picture</th>
+                          <th scope="col">First Name</th>
+                          <th scope="col">Last Name</th>
+                          <th scope="col">Cell Phone</th>
+                          <th scope="col">Email Address</th>
+                          <th scope="col">Class Of</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {data?.length > 0 &&
+                          data.map((record) => (
+                            <tr>
+                              <AllProfilesItem record={record} />
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                    {(!data || (data && data.length === 0)) && (
+                      <h4 className="text-center">No Record Found</h4>
+                    )}
+                  </div>
+                  <div style={{ marginBottom: "5px", float: "right" }}>
+                    <Pagination
+                      count={count}
+                      shape="rounded"
+                      screen={screen}
+                      onChange={handleChange}
+                      showFirstButton
+                      showLastButton
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
