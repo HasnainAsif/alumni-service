@@ -113,7 +113,7 @@ const ProfileDetail = ({}) => {
   useEffect(() => {
     if (user?.alumniId || queryParams) {
       axios
-        .get(`${serverRoutes.ALUMNI}/${user?.alumniId || queryParams || 0}`)
+        .get(`${serverRoutes.ALUMNI}/${queryParams || user?.alumniId || 0}`)
         .then((res) => {
           setProfileData(res.data);
         })
@@ -121,7 +121,7 @@ const ProfileDetail = ({}) => {
           console.log(err.response?.data?.message || "server error")
         );
     }
-  }, [user?.alumniId]);
+  }, [user?.alumniId, queryParams]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -151,7 +151,12 @@ const ProfileDetail = ({}) => {
               {user?.admin ? "Admin Center" : "Find Others"}
             </button>
             {!user?.admin && (
-              <button className="nav-link mr-2">Your Profile</button>
+              <button
+                className="nav-link mr-2"
+                onClick={() => history.push(browserRoutes.PROFILE_DETAIL)}
+              >
+                Your Profile
+              </button>
             )}
             <button
               className="btn selectwalletbutton my-2 my-sm-0"
@@ -197,13 +202,17 @@ const ProfileDetail = ({}) => {
                         Create Profile
                       </button>
                     ) : (
-                      <button
-                        className="btn btn-primary profile-button"
-                        type="button"
-                        onClick={toEditProfile}
-                      >
-                        Edit Profile
-                      </button>
+                      <>
+                        {user.admin && (
+                          <button
+                            className="btn btn-primary profile-button"
+                            type="button"
+                            onClick={toEditProfile}
+                          >
+                            Edit Profile
+                          </button>
+                        )}
+                      </>
                     )}
                   </div>
                   <div className="mt-5 text-center">
