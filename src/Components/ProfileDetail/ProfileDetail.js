@@ -143,15 +143,14 @@ const ProfileDetail = ({}) => {
           <img width="200px" src="images/fake-logo.png" alt="..." />
 
           <div className="d-flex">
-            {user?.admin ? (
-              <button
-                // className="btn selectwalletbutton my-2 my-sm-0 mr-2"
-                className="nav-link mr-2"
-                onClick={toAdminCenter}
-              >
-                Admin Center
-              </button>
-            ) : (
+            <button
+              // className="btn selectwalletbutton my-2 my-sm-0 mr-2"
+              className="nav-link mr-2"
+              onClick={toAdminCenter}
+            >
+              {user?.admin ? "Admin Center" : "Find Others"}
+            </button>
+            {!user?.admin && (
               <button className="nav-link mr-2">Your Profile</button>
             )}
             <button

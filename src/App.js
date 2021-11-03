@@ -111,16 +111,18 @@ const App = () => {
             <Route
               exact
               path={browserRoutes.ALL_PROFILES}
-              render={(props) =>
-                user === undefined ? (
-                  <div className="align-loader-center">
-                    <div className="loader"></div>
-                  </div>
-                ) : user?.admin ? (
-                  <AllProfiles {...props} />
-                ) : (
-                  <Redirect to={browserRoutes.PROFILE_DETAIL} />
-                )
+              render={
+                (props) =>
+                  user === undefined ? (
+                    <div className="align-loader-center">
+                      <div className="loader"></div>
+                    </div>
+                  ) : (
+                    <AllProfiles {...props} />
+                  )
+                // : (
+                //   <Redirect to={browserRoutes.PROFILE_DETAIL} />
+                // )
               }
             />
 

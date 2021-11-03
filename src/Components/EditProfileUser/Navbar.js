@@ -30,15 +30,14 @@ const Navbar = () => {
       <img width="200px" src="images/fake-logo.png" alt="..." />
 
       <div className="d-flex">
-        {user?.admin ? (
-          <button
-            // className="btn selectwalletbutton my-2 my-sm-0"
-            className="nav-link mr-2"
-            onClick={toAdminCenter}
-          >
-            Admin Center
-          </button>
-        ) : (
+        <button
+          // className="btn selectwalletbutton my-2 my-sm-0"
+          className="nav-link mr-2"
+          onClick={toAdminCenter}
+        >
+          {user?.admin ? "Admin Center" : "Find Others"}
+        </button>
+        {!user?.admin && (
           <button className="nav-link mr-2" onClick={toYourProfile}>
             Your Profile
           </button>

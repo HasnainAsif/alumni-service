@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import MaterialTable from "material-table";
-import tableIcons from "./MaterialTableIcons";
+// import MaterialTable from "material-table";
+// import tableIcons from "./MaterialTableIcons";
 import { useHistory } from "react-router-dom";
 import browserRoutes from "../../Routes/browserRoutes";
 import serverRoutes from "../../Routes/serverRoutes";
 import axios from "axios";
 // import { data } from "./data";
 import { UserContext } from "../../App";
-import setAuthToken from "../../utils/setAuthToken";
+// import setAuthToken from "../../utils/setAuthToken";
 import AllProfilesItem from "./AllProfilesItem";
 import Pagination from "@material-ui/lab/Pagination";
 
@@ -67,43 +67,43 @@ const AllProfiles = () => {
     history.push(browserRoutes.CREATE_PROFILES);
   };
 
-  const columns = [
-    {
-      title: "Profile Picture",
-      field: "profilePictureURL",
-      render: (rowdata) => (
-        <img
-          src={rowdata.profilePictureURL || "images/profile-img.png"}
-          alt=""
-          style={{
-            width: "50px",
-            height: "50px",
-            objectFit: "cover",
-            borderRadius: "50%",
-          }}
-        />
-      ),
-    },
-    { title: "First Name", field: "firstname" },
-    { title: "Last Name", field: "lastname" },
-    { title: "Cell Phone", field: "cellPhone" },
-    { title: "Email Address", field: "emailAddress" },
-    { title: "Class Of", field: "highSchoolGradYear" },
-    {
-      field: "id",
-      // title: "Explore",
-      render: (rowData) => (
-        <button
-          className="btn btn-sm selectwalletbutton"
-          onClick={() =>
-            history.push(browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id)
-          }
-        >
-          Explore
-        </button>
-      ),
-    },
-  ];
+  // const columns = [
+  //   {
+  //     title: "Profile Picture",
+  //     field: "profilePictureURL",
+  //     render: (rowdata) => (
+  //       <img
+  //         src={rowdata.profilePictureURL || "images/profile-img.png"}
+  //         alt=""
+  //         style={{
+  //           width: "50px",
+  //           height: "50px",
+  //           objectFit: "cover",
+  //           borderRadius: "50%",
+  //         }}
+  //       />
+  //     ),
+  //   },
+  //   { title: "First Name", field: "firstname" },
+  //   { title: "Last Name", field: "lastname" },
+  //   { title: "Cell Phone", field: "cellPhone" },
+  //   { title: "Email Address", field: "emailAddress" },
+  //   { title: "Class Of", field: "highSchoolGradYear" },
+  //   {
+  //     field: "id",
+  //     // title: "Explore",
+  //     render: (rowData) => (
+  //       <button
+  //         className="btn btn-sm selectwalletbutton"
+  //         onClick={() =>
+  //           history.push(browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id)
+  //         }
+  //       >
+  //         Explore
+  //       </button>
+  //     ),
+  //   },
+  // ];
 
   //noOfScreens
   useEffect(() => {
@@ -145,7 +145,7 @@ const AllProfiles = () => {
               // className="btn selectwalletbutton my-2 my-sm-0"
               className="nav-link"
             >
-              Admin Center
+              {user.admin ? "Admin Center" : "Find Others"}
             </button>
             <button
               className="btn selectwalletbutton ml-2"
@@ -159,7 +159,7 @@ const AllProfiles = () => {
         <div className="container">
           <div className="row mt-2">
             <div className="col-md-12">
-              <MaterialTable
+              {/* <MaterialTable
                 icons={tableIcons}
                 columns={columns}
                 data={data}
@@ -167,7 +167,7 @@ const AllProfiles = () => {
                 options={{
                   actionsColumnIndex: -1,
                 }}
-              />
+              /> */}
               <div className="card">
                 <div className="card-header">All Alumni</div>
                 <div className="card-body">
@@ -259,7 +259,7 @@ const AllProfiles = () => {
             </div>
           </div>
           <div
-            className="row mt-2 d-flex"
+            className="row mt-2 d-flex mb-2"
             style={{ justifyContent: "space-between" }}
           >
             {/* <div className="col-lg-6"> */}
