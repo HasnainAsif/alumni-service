@@ -264,12 +264,14 @@ const AllProfiles = () => {
           >
             {/* <div className="col-lg-6"> */}
             <div>
-              <button
-                className="btn selectwalletbutton my-2 my-sm-0"
-                onClick={createNewProfile}
-              >
-                Create New Profile
-              </button>
+              {user.admin && (
+                <button
+                  className="btn selectwalletbutton my-2 my-sm-0"
+                  onClick={createNewProfile}
+                >
+                  Create New Profile
+                </button>
+              )}
             </div>
             {/* </div>
             <div className="col-lg-6 myright"> */}
