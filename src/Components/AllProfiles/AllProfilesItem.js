@@ -10,7 +10,7 @@ const AllProfilesItem = ({ record }) => {
       <td>
         <div className="text-center">
           <img
-            src={record?.profilePictureURL || "images/fake-logo.png"}
+            src={record?.profilePictureURL || "images/profile-img.png"}
             className="rounded"
             alt="..."
             style={{
