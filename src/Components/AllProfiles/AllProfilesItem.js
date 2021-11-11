@@ -8,7 +8,8 @@ const AllProfilesItem = ({ record }) => {
   return (
     <Fragment>
       <td>
-        <div className="text-center">
+        {/* className="text-center" */}
+        <div>
           <img
             src={record?.profilePictureURL || "images/fake-logo.png"}
             className="rounded"

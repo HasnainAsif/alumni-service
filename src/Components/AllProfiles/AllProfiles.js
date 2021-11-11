@@ -10,6 +10,8 @@ import { UserContext } from "../../App";
 // import setAuthToken from "../../utils/setAuthToken";
 import AllProfilesItem from "./AllProfilesItem";
 import Pagination from "@material-ui/lab/Pagination";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 const AllProfiles = () => {
   const [user, setUser] = React.useContext(UserContext);
@@ -67,44 +69,6 @@ const AllProfiles = () => {
     history.push(browserRoutes.CREATE_PROFILES);
   };
 
-  // const columns = [
-  //   {
-  //     title: "Profile Picture",
-  //     field: "profilePictureURL",
-  //     render: (rowdata) => (
-  //       <img
-  //         src={rowdata.profilePictureURL || "images/profile-img.png"}
-  //         alt=""
-  //         style={{
-  //           width: "50px",
-  //           height: "50px",
-  //           objectFit: "cover",
-  //           borderRadius: "50%",
-  //         }}
-  //       />
-  //     ),
-  //   },
-  //   { title: "First Name", field: "firstname" },
-  //   { title: "Last Name", field: "lastname" },
-  //   { title: "Cell Phone", field: "cellPhone" },
-  //   { title: "Email Address", field: "emailAddress" },
-  //   { title: "Class Of", field: "highSchoolGradYear" },
-  //   {
-  //     field: "id",
-  //     // title: "Explore",
-  //     render: (rowData) => (
-  //       <button
-  //         className="btn btn-sm selectwalletbutton"
-  //         onClick={() =>
-  //           history.push(browserRoutes.PROFILE_DETAIL + "?id=" + rowData.id)
-  //         }
-  //       >
-  //         Explore
-  //       </button>
-  //     ),
-  //   },
-  // ];
-
   //noOfScreens
   useEffect(() => {
     if (countData % RECORD_PER_PAGE === 0) {
@@ -159,15 +123,6 @@ const AllProfiles = () => {
         <div className="container">
           <div className="row mt-2">
             <div className="col-md-12">
-              {/* <MaterialTable
-                icons={tableIcons}
-                columns={columns}
-                data={data}
-                title="All Alumni"
-                options={{
-                  actionsColumnIndex: -1,
-                }}
-              /> */}
               <div className="card">
                 <div className="card-header">All Alumni</div>
                 <div className="card-body">
@@ -216,7 +171,67 @@ const AllProfiles = () => {
                     </div>
                   </div>
                   <div className="table-responsive">
-                    <table
+                    <Table className="table">
+                      <Thead>
+                        <Tr>
+                          <Th>Profile Picture</Th>
+                          <Th>First Name</Th>
+                          <Th>Last Name</Th>
+                          <Th>Cell Phone</Th>
+                          <Th>Email Address</Th>
+                          <Th>Class Of</Th>
+                          <Th></Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        {data?.length > 0 &&
+                          data.map((record) => (
+                            <Tr key={record?.id}>
+                              {/* <AllProfilesItem record={record} /> */}
+                              <Td>
+                                {/* className="text-center" */}
+                                <div>
+                                  <img
+                                    src={
+                                      record?.profilePictureURL ||
+                                      "images/fake-logo.png"
+                                    }
+                                    className="rounded"
+                                    alt="..."
+                                    style={{
+                                      width: "40px",
+                                      height: "40px",
+                                      objectFit: "cover",
+                                      borderRadius: "50%",
+                                    }}
+                                  />
+                                </div>
+                              </Td>
+                              <Td>{record?.firstname}</Td>
+                              <Td>{record?.lastname}</Td>
+                              <Td>{record?.cellPhone}</Td>
+                              <Td>{record?.emailAddress}</Td>
+                              <Td>{record?.highSchoolGradYear}</Td>
+                              <Td>
+                                <button
+                                  className="btn btn-sm selectwalletbutton"
+                                  onClick={() =>
+                                    history.push(
+                                      browserRoutes.PROFILE_DETAIL +
+                                        "?id=" +
+                                        record?.id
+                                    )
+                                  }
+                                >
+                                  Explore
+                                </button>
+                              </Td>
+                            </Tr>
+                          ))}
+                      </Tbody>
+                    </Table>
+
+                    {/* <table
                       className="table"
                       style={{ backgroundColor: "#fff" }}
                     >
@@ -234,12 +249,12 @@ const AllProfiles = () => {
                       <tbody>
                         {data?.length > 0 &&
                           data.map((record) => (
-                            <tr>
+                            <tr key={record?.id}>
                               <AllProfilesItem record={record} />
                             </tr>
                           ))}
                       </tbody>
-                    </table>
+                    </table> */}
                     {(!data || (data && data.length === 0)) && (
                       <h4 className="text-center">No Record Found</h4>
                     )}
