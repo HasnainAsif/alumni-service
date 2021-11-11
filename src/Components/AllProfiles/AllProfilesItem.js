@@ -11,7 +11,7 @@ const AllProfilesItem = ({ record }) => {
         {/* className="text-center" */}
         <div>
           <img
-            src={record?.profilePictureURL || "images/fake-logo.png"}
+            src={record?.profilePictureURL || "images/profile-img.png"}
             className="rounded"
             alt="..."
             style={{
