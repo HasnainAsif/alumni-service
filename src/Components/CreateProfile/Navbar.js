@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       {/* <img style={{ width: "50%" }} src="images/logo.png" alt="..." /> */}
-      <img width="200px" src="images/fake-logo.png" alt="..." />
+      <img width="200px" src="images/haftr-logo.jpg" alt="..." />
       <div className="d-flex">
         {user?.admin ? (
           <button

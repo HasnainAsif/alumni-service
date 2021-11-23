@@ -7,7 +7,7 @@ const Auth = () => {
     <div className="container">
       <nav className="navbar">
         {/* <img style={{ width: "50%" }} src="images/logo.png" alt="..." /> */}
-        <img width="200px" src="images/fake-logo.png" alt="..." />
+        <img width="200px" src="images/haftr-logo.jpg" alt="..." />
         <div className="d-flex">
           <button className="btn selectwalletbutton my-2 my-sm-0">
             Log in / Sign up
